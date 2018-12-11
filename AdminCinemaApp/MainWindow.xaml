@@ -1,0 +1,69 @@
+﻿<Window
+    x:Class="AdminCinemaApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:CinemaDatabase="clr-namespace:CinemaDatabase;assembly=CinemaDatabase"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AdminCinemaApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d"
+    Loaded="Window_Loaded"
+    Title="MainWindow">
+
+    <Window.Resources>
+        <CollectionViewSource x:Key="filmViewSource" d:DesignSource="{d:DesignInstance {x:Type CinemaDatabase:Film}, CreateList=True}" />
+    </Window.Resources>
+
+    <Grid DataContext="{StaticResource filmViewSource}">
+        <TabControl>
+            <TabItem Header="Obecnie dostepne filmy">
+                <Grid>
+
+                    <DataGrid
+                    x:Name="filmDataGrid"
+                    Margin="10,100,9.6,10"
+                    AutoGenerateColumns="False"
+                    EnableRowVirtualization="True"
+                    ItemsSource="{Binding}"
+                    RowDetailsVisibilityMode="VisibleWhenSelected">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                            x:Name="idColumn"
+                            Width="SizeToHeader"
+                            Binding="{Binding Id}"
+                            Header="Id" />
+                            <DataGridTextColumn
+                            x:Name="titleColumn"
+                            Width="150"
+                            Binding="{Binding Title}"
+                            Header="Title" />
+                            <DataGridTextColumn
+                            x:Name="age_LimitColumn"
+                            Width="SizeToHeader"
+                            Binding="{Binding Age_Limit}"
+                            Header="Age Limit" />
+                            <DataGridTextColumn
+                            x:Name="durationColumn"
+                            Width="SizeToHeader"
+                            Binding="{Binding Duration}"
+                            Header="Duration" />
+                            <DataGridTextColumn
+                            x:Name="descriptionColumn"
+                            Width="Auto"
+                            Binding="{Binding Description}"
+                            Header="Description" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="Add new film" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="146" Height="35" Click="AddFilm_Button"/>
+                    <Button Content="Delete choosen film" HorizontalAlignment="Left" Margin="190,43,0,0" VerticalAlignment="Top" Width="146" Height="35" Click="DeleteFilm_Button"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Obecne senase" />
+            <TabItem Header="Sale kinowe" />
+            <TabItem Header="Bilety" />
+        </TabControl>
+    </Grid>
+
+</Window>

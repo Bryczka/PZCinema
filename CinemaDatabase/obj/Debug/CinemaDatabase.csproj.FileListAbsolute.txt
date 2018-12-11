@@ -1,0 +1,14 @@
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\bin\Debug\CinemaDatabase.exe.config
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\bin\Debug\CinemaDatabase.exe
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\bin\Debug\CinemaDatabase.pdb
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\bin\Debug\EntityFramework.dll
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\bin\Debug\EntityFramework.xml
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.csprojAssemblyReference.cache
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.csproj.CoreCompileInputs.cache
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.csproj.CopyComplete
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.exe
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.pdb
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.Migrations.InitialModel.resources
+C:\Users\Michał\source\repos\CinemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.csproj.GenerateResource.cache
