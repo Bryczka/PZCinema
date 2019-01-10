@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CinemaDatabase
 {
@@ -12,10 +8,12 @@ namespace CinemaDatabase
         public string Time { get; set; }
 
         public string RoomName { get; set; }
+        public int NumberOfSeats { get; set; }
+
         public Film Film { get; set; }
         public IList<Ticket> Tickets { get; set; }
 
-        
+
 
 
     }

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientCinemaApp.AuthorView" Title="About author">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="DimGray">
+            <Label Text="Autor:" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10"/>
+            <Label Text="Michał Bryła" FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10"/>
+            <Label Text="WAT Wydział Cybernetyki" FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10"/>
+            <Label Text="Projekt obsługa kina, wykonany na programowanie zdarzeniowe" FontSize="25" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10"/>
+            <Label Text="Rok wykonania: 2019" FontSize="25" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

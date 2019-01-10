@@ -42,6 +42,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,20 +54,27 @@
   <ItemGroup>
     <Compile Include="Core\DB Classes\Film.cs" />
     <Compile Include="Core\DB Classes\FilmShow.cs" />
+    <Compile Include="Core\DB Classes\Room.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IFilmRepository.cs" />
     <Compile Include="Core\Repositories\IFilmShowRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
+    <Compile Include="Core\Repositories\IRoomRepository.cs" />
     <Compile Include="Core\Repositories\ITicketRepository.cs" />
-    <Compile Include="Migrations\201812062208544_InitialModel.cs" />
-    <Compile Include="Migrations\201812062208544_InitialModel.Designer.cs">
-      <DependentUpon>201812062208544_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201812151846354_Initation.cs" />
+    <Compile Include="Migrations\201812151846354_Initation.Designer.cs">
+      <DependentUpon>201812151846354_Initation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901051752283_AddRooms.cs" />
+    <Compile Include="Migrations\201901051752283_AddRooms.Designer.cs">
+      <DependentUpon>201901051752283_AddRooms.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\CinemaContext.cs" />
     <Compile Include="Persistence\FilmRepository.cs" />
     <Compile Include="Persistence\FilmShowRepository.cs" />
     <Compile Include="Persistence\Repository.cs" />
+    <Compile Include="Persistence\RoomRepository.cs" />
     <Compile Include="Persistence\TicketRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Program.cs" />
@@ -77,8 +86,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812062208544_InitialModel.resx">
-      <DependentUpon>201812062208544_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812151846354_Initation.resx">
+      <DependentUpon>201812151846354_Initation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901051752283_AddRooms.resx">
+      <DependentUpon>201901051752283_AddRooms.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

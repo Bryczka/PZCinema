@@ -1,0 +1,246 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": "5d1ec2f6f4236d1fc41d0e1e1003f36c67ddb188"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "ClientCinemaApp/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "12.0.1",
+          "PCLStorage": "1.0.2",
+          "Xamarin.Forms": "3.4.0.1009999",
+          "Mono.Android": "0.0.0.0",
+          "System.Windows.Forms": "4.0.0.0"
+        },
+        "runtime": {
+          "ClientCinemaApp.dll": {}
+        }
+      },
+      "Microsoft.Bcl/1.1.6": {
+        "dependencies": {
+          "Microsoft.Bcl.Build": "1.0.10"
+        }
+      },
+      "Microsoft.Bcl.Async/1.0.165": {
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.6"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Threading.Tasks.Extensions.dll": {
+            "assemblyVersion": "1.0.12.0",
+            "fileVersion": "1.0.165.0"
+          },
+          "lib/net45/Microsoft.Threading.Tasks.dll": {
+            "assemblyVersion": "1.0.12.0",
+            "fileVersion": "1.0.165.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.Build/1.0.10": {},
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.22727"
+          }
+        }
+      },
+      "PCLStorage/1.0.2": {
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.6",
+          "Microsoft.Bcl.Async": "1.0.165"
+        },
+        "runtime": {
+          "lib/net45/PCLStorage.Abstractions.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
+          },
+          "lib/net45/PCLStorage.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
+          }
+        }
+      },
+      "Xamarin.Forms/3.4.0.1009999": {
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "System.Windows.Forms/4.0.0.0": {
+        "runtime": {
+          "System.Windows.Forms.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "System.Security/4.0.0.0": {
+        "runtime": {
+          "System.Security.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "System.Configuration/4.0.0.0": {
+        "runtime": {
+          "System.Configuration.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "Accessibility/4.0.0.0": {
+        "runtime": {
+          "Accessibility.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "System.Deployment/4.0.0.0": {
+        "runtime": {
+          "System.Deployment.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "System.Runtime.Serialization.Formatters.Soap/4.0.0.0": {
+        "runtime": {
+          "System.Runtime.Serialization.Formatters.Soap.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ClientCinemaApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Bcl/1.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2RB+44L1oELRo8zgFjFDhssDR8FIpOi3iD8kgxLBog7EJ+PMUpS17AGZ34JOPYHwl4i4weSgelQ/yltZ+Y5yVA==",
+      "path": "microsoft.bcl/1.1.6",
+      "hashPath": "microsoft.bcl.1.1.6.nupkg.sha512"
+    },
+    "Microsoft.Bcl.Async/1.0.165": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/7B77Vxe7LB3u6nLA2lvyN7QQfFWwq+FivTEWQ/zh9dEq/Vyq66cshNxnGv1FI+eyxa2znsGexrDSpvqVdJpAw==",
+      "path": "microsoft.bcl.async/1.0.165",
+      "hashPath": "microsoft.bcl.async.1.0.165.nupkg.sha512"
+    },
+    "Microsoft.Bcl.Build/1.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UdtAwAoXLgiL9AsaXmZ7Mxcnl5xDjuK64aMR7+/9SAbUpbWRbg9bPAKtHJRGBeGFA9ehF4mW8WKQ6DCqSbEKPw==",
+      "path": "microsoft.bcl.build/1.0.10",
+      "hashPath": "microsoft.bcl.build.1.0.10.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "path": "newtonsoft.json/12.0.1",
+      "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
+    },
+    "PCLStorage/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gj37kg2DqlKADjnoax9wqSLSo9ZeEBRTEqfXg3R+fm2sbgst2B0Xa6TX1sh2ORrj83vk8lzyZ/DGEQx7c2QKPg==",
+      "path": "pclstorage/1.0.2",
+      "hashPath": "pclstorage.1.0.2.nupkg.sha512"
+    },
+    "Xamarin.Forms/3.4.0.1009999": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pgqRxgD23FJHG2B7zOxf4Fm+KYgoWctUJp8hNtdZgAt43RIiK3VgM11wJf3S0SkMIsXQCUL0yYQmR8gR/njltA==",
+      "path": "xamarin.forms/3.4.0.1009999",
+      "hashPath": "xamarin.forms.3.4.0.1009999.nupkg.sha512"
+    },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Windows.Forms/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Security/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Configuration/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Accessibility/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Deployment/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Runtime.Serialization.Formatters.Soap/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

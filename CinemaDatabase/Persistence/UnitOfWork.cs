@@ -1,12 +1,6 @@
 ﻿using CinemaDatabase.Core;
 using CinemaDatabase.Core.Repositories;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace CinemaDatabase.Persistence
 {
     public class UnitOfWork : IUnitOfWork
@@ -19,14 +13,15 @@ namespace CinemaDatabase.Persistence
             FilmShow = new FilmShowRepository(_context);
             Film = new FilmRepository(_context);
             Ticket = new TicketRepository(_context);
-           
-           
+            Room = new RoomRepository(_context);
+
+
         }
         public IFilmShowRepository FilmShow { get; private set; }
         public IFilmRepository Film { get; private set; }
         public ITicketRepository Ticket { get; private set; }
 
-
+        public IRoomRepository Room { get; private set; }
 
 
         public int Complete()
@@ -37,6 +32,7 @@ namespace CinemaDatabase.Persistence
         public void Dispose()
         {
             _context.Dispose();
+
         }
     }
 }

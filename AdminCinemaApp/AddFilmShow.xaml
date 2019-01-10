@@ -1,0 +1,48 @@
+﻿<Window x:Class="AdminCinemaApp.AddFilmShow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns:local="clr-namespace:AdminCinemaApp"
+        mc:Ignorable="d"
+        Title="AddFilmShow" Height="400" Width="300" x:Name="AddFilmShowWindow" WindowStartupLocation="CenterScreen">
+
+
+    <StackPanel>
+        <TextBlock TextWrapping="Wrap" Text="Time:" FontSize="18" FontWeight="Bold" Margin="0,15,0,5" TextAlignment="Center"/>
+        <wpfTool:DateTimePicker x:Name="TimeOfFilmShow" Height="23" Text="" FontSize="15" Margin="0,0,-0.4,0"/>
+        <TextBlock TextWrapping="Wrap" Text="Room name:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
+        <ComboBox x:Name="RoomName" Height="23"  FontSize="15" SelectionChanged="RoomName_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                    </WrapPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
+        
+        <TextBlock TextWrapping="Wrap" Text="Film Title:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
+        <ComboBox x:Name="FilmShowTitle" Height="23"  FontSize="15">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock x:Name="aa" Text="{Binding Path=Id}"></TextBlock>
+                        <TextBlock Text="  "></TextBlock>
+                        <TextBlock Text="{Binding Path=Title}"></TextBlock>
+                    </WrapPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock TextWrapping="Wrap" Text="Number of seats:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
+        <TextBox x:Name="NumberOfSeats" Height="23" TextWrapping="Wrap" Text="" FontSize="15"/>
+        <Button x:Name="Save_Button" Content="Save" Margin="0,35, 0 ,0" Height="36" FontSize="18" FontWeight="Bold" Click="Save_Button_Click"/>
+
+
+
+
+    </StackPanel>
+</Window>

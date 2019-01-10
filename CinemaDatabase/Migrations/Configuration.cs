@@ -4,16 +4,15 @@ namespace CinemaDatabase.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using CinemaDatabase.Persistence;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CinemaContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<CinemaDatabase.Persistence.CinemaContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(CinemaContext context)
+        protected override void Seed(CinemaDatabase.Persistence.CinemaContext context)
         {
             //  This method will be called after migrating to the latest version.
 
