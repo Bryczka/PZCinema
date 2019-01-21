@@ -1,6 +1,6 @@
 ﻿using CinemaDatabase;
 using CinemaDatabase.Persistence;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 
 namespace AdminCinemaApp
@@ -13,21 +13,19 @@ namespace AdminCinemaApp
         Ticket selectedTicket;
         public BuyTicket(Ticket ticket)
         {
+            ObservableCollection<Price> type = new ObservableCollection<Price>();
+
             InitializeComponent();
 
             var context = new CinemaContext();
             UnitOfWork unitOfWork = new UnitOfWork(context);
             selectedTicket = ticket;
 
-            List<string> type = new List<string>
+            foreach (Price price in unitOfWork.Price.GetAll())
             {
-                "Full",
-                "Student",
-                "Child"
-            };
-
-            TypeOfTicket.ItemsSource = type;
-            TypeOfTicket.Text = type[1];
+                type.Add(unitOfWork.Price.Get(price.Id));
+                TypeOfTicket.ItemsSource = type;
+            }
 
             Title.Text = ticket.FilmShow.Film.Title;
             NameOfRoom.Text = ticket.FilmShow.RoomName;
@@ -40,25 +38,11 @@ namespace AdminCinemaApp
         {
             var context = new CinemaContext();
             UnitOfWork unitOfWork = new UnitOfWork(context);
-
-            double price = 0;
-            if (TypeOfTicket.Text == "Full")
-            {
-                price = 15.00;
-            }
-            else if (TypeOfTicket.Text == "Student")
-            {
-                price = 8.00;
-            }
-            else if (TypeOfTicket.Text == "Child")
-            {
-                price = 5.00;
-            }
-
+            Price price = (Price)TypeOfTicket.SelectionBoxItem;
             unitOfWork.Ticket.Get(selectedTicket.Id).IsFree = false;
-            unitOfWork.Ticket.Get(selectedTicket.Id).Type = TypeOfTicket.Text;
-            unitOfWork.Ticket.Get(selectedTicket.Id).Price = price;
-
+            unitOfWork.Ticket.Get(selectedTicket.Id).IsBought = true;
+            unitOfWork.Ticket.Get(selectedTicket.Id).Type = price.TypeOfTicket;
+            unitOfWork.Ticket.Get(selectedTicket.Id).Price = price.Cost;
             unitOfWork.Complete();
             this.Close();
         }

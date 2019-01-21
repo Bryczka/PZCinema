@@ -4,9 +4,6 @@ namespace AdminCinemaApp
 {
     class IpConfig
     {
-
-
-
         public string GetIp()
         {
             try
@@ -37,12 +34,10 @@ namespace AdminCinemaApp
 
         public void SetIp(string NewIp)
         {
-
             FileStream fileStream = new FileStream(Directory.GetCurrentDirectory() + "\\IpConfig.txt", FileMode.Create, FileAccess.ReadWrite);
             StreamWriter streamWriter = new StreamWriter(fileStream);
             streamWriter.WriteLine(NewIp);
             streamWriter.Close();
-
         }
     }
 }

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientCinemaApp.EmployeeLog">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="DimGray">
+            <Label Text="This option is available for employees only "  FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin=" 40,5,10,5"/>
+            <Label Text="Employee ID: " FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin=" 40,5,10,5"/>
+            <Entry x:Name="IdEntry" Margin="10,10,10,10"/>
+            <Label Text="Employee password: " FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin=" 40,5,10,5"/>
+            <Entry x:Name="PasswordEntry" Margin="10,10,10,10"/>
+            <Button x:Name="LogInButton" Text="Done" Clicked="LogInButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

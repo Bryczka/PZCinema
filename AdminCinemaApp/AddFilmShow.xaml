@@ -38,8 +38,9 @@
         </ComboBox>
 
         <TextBlock TextWrapping="Wrap" Text="Number of seats:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
-        <TextBox x:Name="NumberOfSeats" Height="23" TextWrapping="Wrap" Text="" FontSize="15"/>
+        <TextBox x:Name="NumberOfSeats" Height="23" TextWrapping="Wrap" Text="" FontSize="15" IsEnabled="False"/>
         <Button x:Name="Save_Button" Content="Save" Margin="0,35, 0 ,0" Height="36" FontSize="18" FontWeight="Bold" Click="Save_Button_Click"/>
+        <Image x:Name="TEST" Height="61" Margin="0,0,-0.4,0"/>
 
 
 

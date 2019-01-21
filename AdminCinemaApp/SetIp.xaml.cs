@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Windows;
 
 namespace AdminCinemaApp
@@ -19,7 +18,7 @@ namespace AdminCinemaApp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            if(IPAddress.TryParse(IpTetBox.Text, out IPAddress result))
+            if (IPAddress.TryParse(IpTetBox.Text, out IPAddress result))
             {
                 ipConfig.SetIp(IpTetBox.Text);
                 this.Close();

@@ -17,7 +17,15 @@
         <TextBlock TextWrapping="Wrap" Text="Seat number:" FontSize="18" FontWeight="Bold" Margin="0,15,0,5" TextAlignment="Center" Width="120" Height="27"/>
         <TextBox x:Name="SeatNumber" Height="23" TextWrapping="Wrap" Text="" FontSize="15" Width="167" Margin="0,15,0,5" IsReadOnly="True"/>
         <TextBlock TextWrapping="Wrap" Text="Type of ticket:" FontSize="18" FontWeight="Bold" Margin="0,15,0,5" TextAlignment="Center" Width="120" Height="48"/>
-        <ComboBox x:Name="TypeOfTicket" Width="167" Height="25"></ComboBox>
+        <ComboBox x:Name="TypeOfTicket" Width="167" Height="25">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Path=TypeOfTicket}"></TextBlock>
+                    </WrapPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <Button x:Name="Save_Button"  Content="Save" Margin="35,5,0,0" Height="36" FontSize="18" FontWeight="Bold" Click="Save_Button_Click" Width="216"/>
 
 

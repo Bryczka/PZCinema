@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ClientCinemaApp.Database_classes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -12,76 +13,81 @@ namespace ClientCinemaApp
     public partial class BuyTicketView : ContentPage
     {
         List<Ticket> ListSelectedTickets = new List<Ticket>();
-        List<string> TabOfSelectedTickets = new List<string>();
-        List<string> ListOfTypeTickets = new List<string>()
-        {
-            "Full, Price: 10,00$", "Student, Price: 5,00$", "Child, Price: 6,00$"
-        };
-
-        Film selectedFilm;
-        string selectedFilmShowData;
-        public BuyTicketView(List<Ticket> SelectedTickets, Film film, string selectedFilmShow)
+        List<Price> TabOfSelectedTickets = new List<Price>();
+        List<Price> ListOfTypeTickets = new List<Price>();
+        string buyerEmail;
+        IpConfig ipConfig = new IpConfig();
+        public BuyTicketView(List<Ticket> SelectedTickets, string email)
         {
             InitializeComponent();
             ListSelectedTickets = SelectedTickets;
-            selectedFilmShowData = selectedFilmShow;
-            selectedFilm = film;
-            BuyTickets();
-            
+            buyerEmail = email;
+            LoadTypeOfTicketAsync();
         }
 
-        public void BuyTickets()
+        private async void LoadTypeOfTicketAsync()
+        {
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    client.BaseAddress = new Uri("http://" + ipConfig.GetIpAsync() + ":9095/api/");
+
+                    string responseString = "prices";
+                    HttpResponseMessage response = await client.GetAsync(responseString);
+                    var result = await response.Content.ReadAsStringAsync();
+                    ListOfTypeTickets = JsonConvert.DeserializeObject<List<Price>>(result.ToString());
+                    BuyTickets();
+                }
+                catch
+                {
+                    DependencyService.Get<IMessage>().ShortAlert("Connection error...");
+                    await Navigation.PopToRootAsync();
+                }
+            }
+        }
+        private void BuyTickets()
         {
             int i = 0;
             foreach (Ticket ticket in ListSelectedTickets)
             {
+                Label[] labels = new Label[3];
 
-                Label label = new Label()
+                labels[0] = new Label
                 {
-                    Text = "Choose type of ticket number",
-
+                    Text = "Choose type of ticket number"
                 };
-                label.FontSize = 25;
-                label.TextColor = Color.White;
-                label.VerticalTextAlignment = TextAlignment.Center;
-                label.HorizontalTextAlignment = TextAlignment.Center;
-                BuyTicketMenuView.Children.Add(label);
-
-                Label label1 = new Label()
+                labels[1] = new Label
                 {
-                    Text = "Seat number: " + ticket.SeatNumber,
-
+                    Text = "Seat number: " + ticket.SeatNumber
                 };
-                label1.FontSize = 20;
-                label1.TextColor = Color.White;
-                label1.VerticalTextAlignment = TextAlignment.Center;
-                label1.HorizontalTextAlignment = TextAlignment.Center;
-                BuyTicketMenuView.Children.Add(label1);
-
-                Label label2 = new Label()
+                labels[2] = new Label
                 {
-                    Text = "Type of ticket: ",
-
+                    Text = "Type of ticket: "
                 };
-                label2.FontSize = 20;
-                label2.TextColor = Color.White;
-                label2.VerticalTextAlignment = TextAlignment.Center;
-                label2.HorizontalTextAlignment = TextAlignment.Center;
-                BuyTicketMenuView.Children.Add(label2);
+
+                foreach (Label label in labels)
+                {
+                    label.FontSize = 25;
+                    label.TextColor = Color.White;
+                    label.VerticalTextAlignment = TextAlignment.Center;
+                    label.HorizontalTextAlignment = TextAlignment.Center;
+                    BuyTicketMenuView.Children.Add(label);
+                }
 
                 Picker picker = new Picker()
                 {
-                    TextColor = Color.White
-
+                    TextColor = Color.White,
+                    FontSize = 20,
+                    ItemsSource = ListOfTypeTickets,
+                    ItemDisplayBinding = new Binding("TypeOfTicket"),
+                    SelectedIndex = 0,
+                    TabIndex = i
                 };
-                picker.FontSize = 20;
-                picker.ItemsSource = ListOfTypeTickets;
-                picker.SelectedItem = ListOfTypeTickets[0];
-                BuyTicketMenuView.Children.Add(picker);
+                TabOfSelectedTickets.Add((Price)picker.SelectedItem);
                 picker.SelectedIndexChanged += Picker_SelectedIndexChanged;
-                picker.TabIndex = i;
-                TabOfSelectedTickets.Add(picker.SelectedItem.ToString());
-                i++;
+                BuyTicketMenuView.Children.Add(picker);
+            i++;
             }
 
             Button button = new Button()
@@ -89,62 +95,47 @@ namespace ClientCinemaApp
                 Text = "Buy tickets"
             };
             button.Padding = 1;
-            button.BackgroundColor = Color.LightGray;
+            button.BackgroundColor = Color.WhiteSmoke;
             BuyTicketMenuView.Children.Add(button);
             button.Clicked += new EventHandler(Button_Clicked);
-
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TabOfSelectedTickets.Insert(((sender as Picker).TabIndex), (sender as Picker).SelectedItem.ToString());
+            TabOfSelectedTickets[(sender as Picker).TabIndex]=(Price)(sender as Picker).SelectedItem;
         }
 
-        private void AfterBuyPage()
-        {
-            Navigation.PushAsync(new AfterBuyTicketView(ListSelectedTickets, selectedFilm, selectedFilmShowData));
-        }
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            
             int i = 0;
             foreach (Ticket ticket in ListSelectedTickets)
             {
-
-                var client = new HttpClient
+                using (var client = new HttpClient())
                 {
-                    BaseAddress = new Uri("http://192.168.0.102:9095/api/")
-                };
+                    try
+                    {
+                        client.BaseAddress = new Uri("http://" + ipConfig.GetIpAsync() + ":9095/api/");
 
-                if (TabOfSelectedTickets[i].Equals("Full, Price: 10,00$"))
-                {
-                    ticket.Price = 10.00;
-                    ticket.Type = "Full";
-
+                        var a = TabOfSelectedTickets[i].ToString();
+                        ticket.Price = TabOfSelectedTickets[i].Cost;
+                        ticket.Type = TabOfSelectedTickets[i].TypeOfTicket;
+                        ticket.UserEmail = buyerEmail;
+                        ticket.IsBought = true;
+                        string responseString = "tickets/" + ticket.Id;
+                        var json = JsonConvert.SerializeObject(ticket);
+                        var content = new StringContent(json, Encoding.UTF8, "application/json");
+                        HttpResponseMessage response = await client.PutAsync(responseString, content);
+                        i++;
+                    }
+                    catch
+                    {
+                        DependencyService.Get<IMessage>().ShortAlert("Connection error...");
+                        await Navigation.PopToRootAsync();
+                    }
                 }
-                else if (TabOfSelectedTickets[i].Equals("Student, Price: 5,00$"))
-                {
-                    ticket.Price = 5.00;
-                    ticket.Type = "Student";
-
-                }
-                else if (TabOfSelectedTickets[i].Equals("Child, Price: 6,00$"))
-                {
-                    ticket.Price = 6.00;
-                    ticket.Type = "Child";
-                };
-
-                string responseString = "tickets/" + ticket.Id;
-                var json = JsonConvert.SerializeObject(ticket);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-
-                HttpResponseMessage response = await client.PutAsync(responseString, content);
-
-                i++;
-
-                
             }
-            AfterBuyPage();
+            await Navigation.PopToRootAsync();
         }
     }
 }

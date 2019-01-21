@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientCinemaApp.TicketToDeleteView">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="DimGray" x:Name="LayoutName">
+            <Label Text="Title:" TextColor="White" FontSize="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            <Label x:Name="TitleValue" TextColor="White" FontSize="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label Text="Time:" TextColor="White" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="TimeValue" TextColor="White" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Room: " TextColor="White" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <Label x:Name="RoomValue" TextColor="White" Margin="0,0,6,0" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label Text="Seat: " TextColor="White" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label x:Name="SeatValue" TextColor="White" Margin="0,0,6,0" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label Text="Type: " TextColor="White" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label x:Name="TypeValue" TextColor="White" Margin="0,0,6,0" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+            <Image x:Name="QRcode" Margin="10,50,10,10"/>
+            <Button x:Name="DeleteTicket" Margin="5,5,5,5" Clicked="DeleteTicket_Clicked" Text="Delete ticket"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

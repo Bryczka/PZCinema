@@ -1,5 +1,6 @@
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\ClientCinemaApp.Android.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\ClientCinemaApp.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\FastAndroidCamera.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\FormsViewGroup.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Java.Interop.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Mono.Android.dll
@@ -34,6 +35,11 @@ C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.And
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\ZXing.Net.Mobile.Core.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\ZXing.Net.Mobile.Forms.Android.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\ZXing.Net.Mobile.Forms.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\zxing.portable.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\ZXingNetMobile.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\netstandard.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Data.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Numerics.dll
@@ -51,3 +57,10 @@ C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.And
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Resources.ResourceManager.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Diagnostics.Debug.dll
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Mono.Security.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Collections.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Runtime.Extensions.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.ObjectModel.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Threading.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Text.Encoding.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Text.RegularExpressions.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Globalization.dll

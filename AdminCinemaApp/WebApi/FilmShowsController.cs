@@ -43,6 +43,16 @@ namespace AdminCinemaApp
 
         }
 
+        public HttpResponseMessage Get(int id, string filmshow)
+        {
+
+            var context = new CinemaContext();
+            UnitOfWork unitOfWork = new UnitOfWork(context);
+            var json = unitOfWork.FilmShow.Get(id);
+            return Request.CreateResponse(HttpStatusCode.OK, json, Configuration.Formatters.JsonFormatter);
+
+        }
+
         // POST api/demo 
         public void Post([FromBody]string value)
         {

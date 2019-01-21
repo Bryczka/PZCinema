@@ -5,7 +5,7 @@
     <ContentPage.Content >
         <ScrollView>
             <StackLayout x:Name="BuyTicketMenuView" BackgroundColor="DimGray">
-                <Label Text="Select type of ticket and complete buying process" FontSize="25" TextColor="White" Margin="3,0,3,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <Label x:Name="BuyTicket"  Text="Select type of ticket and complete buying process" FontSize="25" TextColor="White" Margin="3,0,3,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

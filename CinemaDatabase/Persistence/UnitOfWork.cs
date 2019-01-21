@@ -14,7 +14,8 @@ namespace CinemaDatabase.Persistence
             Film = new FilmRepository(_context);
             Ticket = new TicketRepository(_context);
             Room = new RoomRepository(_context);
-
+            Price = new PriceRepository(_context);
+            Employee = new EmployeeRepository(_context);
 
         }
         public IFilmShowRepository FilmShow { get; private set; }
@@ -22,7 +23,9 @@ namespace CinemaDatabase.Persistence
         public ITicketRepository Ticket { get; private set; }
 
         public IRoomRepository Room { get; private set; }
+        public IPriceRepository Price { get; private set; }
 
+        public IEmployeeRepository Employee { get; private set; }
 
         public int Complete()
         {

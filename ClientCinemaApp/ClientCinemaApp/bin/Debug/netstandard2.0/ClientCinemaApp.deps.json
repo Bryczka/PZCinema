@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "5d1ec2f6f4236d1fc41d0e1e1003f36c67ddb188"
+    "signature": "26512c98ffaa40d9912ea5bda770027d9be8e447"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,36 +11,19 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.1",
-          "PCLStorage": "1.0.2",
           "Xamarin.Forms": "3.4.0.1009999",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1",
           "Mono.Android": "0.0.0.0",
-          "System.Windows.Forms": "4.0.0.0"
+          "PresentationCore": "4.0.0.0",
+          "PresentationFramework": "4.0.0.0",
+          "System.Windows.Forms": "4.0.0.0",
+          "WindowsBase": "4.0.0.0"
         },
         "runtime": {
           "ClientCinemaApp.dll": {}
         }
       },
-      "Microsoft.Bcl/1.1.6": {
-        "dependencies": {
-          "Microsoft.Bcl.Build": "1.0.10"
-        }
-      },
-      "Microsoft.Bcl.Async/1.0.165": {
-        "dependencies": {
-          "Microsoft.Bcl": "1.1.6"
-        },
-        "runtime": {
-          "lib/net45/Microsoft.Threading.Tasks.Extensions.dll": {
-            "assemblyVersion": "1.0.12.0",
-            "fileVersion": "1.0.165.0"
-          },
-          "lib/net45/Microsoft.Threading.Tasks.dll": {
-            "assemblyVersion": "1.0.12.0",
-            "fileVersion": "1.0.165.0"
-          }
-        }
-      },
-      "Microsoft.Bcl.Build/1.0.10": {},
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "NETStandard.Library/2.0.3": {
         "dependencies": {
@@ -52,22 +35,6 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.1.22727"
-          }
-        }
-      },
-      "PCLStorage/1.0.2": {
-        "dependencies": {
-          "Microsoft.Bcl": "1.1.6",
-          "Microsoft.Bcl.Async": "1.0.165"
-        },
-        "runtime": {
-          "lib/net45/PCLStorage.Abstractions.dll": {
-            "assemblyVersion": "1.0.2.0",
-            "fileVersion": "1.0.2.0"
-          },
-          "lib/net45/PCLStorage.dll": {
-            "assemblyVersion": "1.0.2.0",
-            "fileVersion": "1.0.2.0"
           }
         }
       },
@@ -87,11 +54,55 @@
           }
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "runtime": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Core.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          },
+          "lib/netstandard1.0/ZXingNetMobile.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          },
+          "lib/netstandard1.0/zxing.portable.dll": {
+            "assemblyVersion": "0.16.2.0",
+            "fileVersion": "0.16.2.0"
+          }
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "dependencies": {
+          "Xamarin.Forms": "3.4.0.1009999",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Forms.dll": {
+            "assemblyVersion": "2.4.1.0",
+            "fileVersion": "2.4.1.0"
+          }
+        }
+      },
       "Mono.Android/0.0.0.0": {
         "runtime": {
           "Mono.Android.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "PresentationCore/4.0.0.0": {
+        "runtime": {
+          "PresentationCore.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "PresentationFramework/4.0.0.0": {
+        "runtime": {
+          "PresentationFramework.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
           }
         }
       },
@@ -103,9 +114,25 @@
           }
         }
       },
-      "System.Security/4.0.0.0": {
+      "WindowsBase/4.0.0.0": {
         "runtime": {
-          "System.Security.dll": {
+          "WindowsBase.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "System.Xaml/4.0.0.0": {
+        "runtime": {
+          "System.Xaml.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "UIAutomationTypes/4.0.0.0": {
+        "runtime": {
+          "UIAutomationTypes.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.7.3062.0"
           }
@@ -119,9 +146,17 @@
           }
         }
       },
-      "Accessibility/4.0.0.0": {
+      "System.Windows.Input.Manipulations/4.0.0.0": {
         "runtime": {
-          "Accessibility.dll": {
+          "System.Windows.Input.Manipulations.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "UIAutomationProvider/4.0.0.0": {
+        "runtime": {
+          "UIAutomationProvider.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.7.3062.0"
           }
@@ -130,6 +165,38 @@
       "System.Deployment/4.0.0.0": {
         "runtime": {
           "System.Deployment.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "ReachFramework/4.0.0.0": {
+        "runtime": {
+          "ReachFramework.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "System.Printing/4.0.0.0": {
+        "runtime": {
+          "System.Printing.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "Accessibility/4.0.0.0": {
+        "runtime": {
+          "Accessibility.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.3062.0"
+          }
+        }
+      },
+      "System.Security/4.0.0.0": {
+        "runtime": {
+          "System.Security.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.7.3062.0"
           }
@@ -150,27 +217,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "Microsoft.Bcl/1.1.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-2RB+44L1oELRo8zgFjFDhssDR8FIpOi3iD8kgxLBog7EJ+PMUpS17AGZ34JOPYHwl4i4weSgelQ/yltZ+Y5yVA==",
-      "path": "microsoft.bcl/1.1.6",
-      "hashPath": "microsoft.bcl.1.1.6.nupkg.sha512"
-    },
-    "Microsoft.Bcl.Async/1.0.165": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/7B77Vxe7LB3u6nLA2lvyN7QQfFWwq+FivTEWQ/zh9dEq/Vyq66cshNxnGv1FI+eyxa2znsGexrDSpvqVdJpAw==",
-      "path": "microsoft.bcl.async/1.0.165",
-      "hashPath": "microsoft.bcl.async.1.0.165.nupkg.sha512"
-    },
-    "Microsoft.Bcl.Build/1.0.10": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-UdtAwAoXLgiL9AsaXmZ7Mxcnl5xDjuK64aMR7+/9SAbUpbWRbg9bPAKtHJRGBeGFA9ehF4mW8WKQ6DCqSbEKPw==",
-      "path": "microsoft.bcl.build/1.0.10",
-      "hashPath": "microsoft.bcl.build.1.0.10.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
@@ -193,13 +239,6 @@
       "path": "newtonsoft.json/12.0.1",
       "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
     },
-    "PCLStorage/1.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-gj37kg2DqlKADjnoax9wqSLSo9ZeEBRTEqfXg3R+fm2sbgst2B0Xa6TX1sh2ORrj83vk8lzyZ/DGEQx7c2QKPg==",
-      "path": "pclstorage/1.0.2",
-      "hashPath": "pclstorage.1.0.2.nupkg.sha512"
-    },
     "Xamarin.Forms/3.4.0.1009999": {
       "type": "package",
       "serviceable": true,
@@ -207,7 +246,31 @@
       "path": "xamarin.forms/3.4.0.1009999",
       "hashPath": "xamarin.forms.3.4.0.1009999.nupkg.sha512"
     },
+    "ZXing.Net.Mobile/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UJVTeViJx6D5vqhMNzvWw6Jacsm6/mgAGQOMLYIG+DyYHLmY/+OPT5uiGY3CjdcmjnIoiPTXsTgM9YUsgsutVw==",
+      "path": "zxing.net.mobile/2.4.1",
+      "hashPath": "zxing.net.mobile.2.4.1.nupkg.sha512"
+    },
+    "ZXing.Net.Mobile.Forms/2.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LD9SHG/6k+QzVD3gEujl5SF+Bz72VYbMjRos6pf1B3kG/TV5WJ9ygPuazibTTWg0OaKoftPhbmfQYSEfCIXWMA==",
+      "path": "zxing.net.mobile.forms/2.4.1",
+      "hashPath": "zxing.net.mobile.forms.2.4.1.nupkg.sha512"
+    },
     "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationCore/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationFramework/4.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -217,7 +280,17 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Security/4.0.0.0": {
+    "WindowsBase/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Xaml/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UIAutomationTypes/4.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -227,12 +300,37 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Accessibility/4.0.0.0": {
+    "System.Windows.Input.Manipulations/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UIAutomationProvider/4.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "System.Deployment/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ReachFramework/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Printing/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Accessibility/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Security/4.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

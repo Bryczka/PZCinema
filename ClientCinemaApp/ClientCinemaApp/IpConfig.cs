@@ -6,47 +6,41 @@ namespace ClientCinemaApp
 
     class IpConfig
     {
-
-        string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "IpConfig.txt");
-
+        readonly string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "IpConfig.txt");
+        readonly string emptyIp = "000.000.0.000";
         string readValue;
 
         public string GetIpAsync()
         {
             try
             {
-
                 if (File.Exists(fileName))
                 {
                     readValue = File.ReadAllText(fileName);
 
                     if (readValue.Equals(""))
                     {
-
-                        return "000.000.0.000";
+                        return emptyIp;
                     }
                     else
                     {
-
                         return readValue;
                     }
                 }
                 else
                 {
-                    return "000.000.0.000";
+                    return emptyIp;
                 }
             }
             catch
             {
-                return "000.000.0.000";
+                return emptyIp;
             }
-
         }
 
         public void SetIp(string NewIp)
         {
             File.WriteAllText(fileName, NewIp);
-            
         }
     }
 }

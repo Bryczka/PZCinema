@@ -15,135 +15,167 @@ namespace ClientCinemaApp
         List<Ticket> ListTicket = new List<Ticket>();
         List<Ticket> ListSelectedTickets = new List<Ticket>();
         Film filmSelected;
-        string selectedFilmShowData;
-        public TicketView(Film selectedFilm, string selectedFilmShow, int selectedFilmShowId)
+        FilmShow filmShow;
+        IpConfig ipConfig = new IpConfig();
+        Room filmShowRoom;
+        public TicketView(Film selectedFilm, FilmShow selectedFilmShow, int selectedFilmShowId)
         {
             InitializeComponent();
 
             TicketViewTitle.Text = "Title: " + selectedFilm.Title;
             TicketViewDescription.Text = "Description: " + selectedFilm.Description;
             TicketViewDuration.Text = "Duration: " + Environment.NewLine + selectedFilm.Duration.ToString();
-            TicketViewRoomAndTime.Text = selectedFilmShow;
-            selectedFilmShowData = selectedFilmShow;
+            TicketViewRoomAndTime.Text = selectedFilmShow.Time.Substring(0, selectedFilmShow.Time.Length - 3) + Environment.NewLine + selectedFilmShow.RoomName;
+            filmShow = selectedFilmShow;
             FilmShowId = selectedFilmShowId;
             filmSelected = selectedFilm;
-            LoadTickets();
-
         }
 
-        protected override bool OnBackButtonPressed()
+        protected override void OnAppearing()
         {
-
-            Application.Current.MainPage.Navigation.PopAsync();
-            base.OnBackButtonPressed();
-            return false;
+            ListSelectedTickets.RemoveAll(item => item.IsFree == false);
+            LoadRoom();
 
         }
-
         private async void LoadTickets()
         {
-            var client = new HttpClient
+            using (var client = new HttpClient())
             {
-                BaseAddress = new Uri("http://192.168.0.102:9095/api/")
-            };
-            string responseString = "tickets/" + FilmShowId;
-            HttpResponseMessage response = await client.GetAsync(responseString);
-            var result = await response.Content.ReadAsStringAsync();
-
-
-            ListTicket = JsonConvert.DeserializeObject<List<Ticket>>(result);
-
-            double a = ListTicket.Count;
-            a = (int)Math.Sqrt(a);
-            int i = 0;
-            foreach (Ticket ticket in ListTicket)
-            {
-                Button button = new Button
+                try
                 {
-                    Margin = new Thickness(0.5, 0.5, 0.5, 0.5),
-                    Text = ticket.SeatNumber.ToString()
+                    client.BaseAddress = new Uri("http://" + ipConfig.GetIpAsync() + ":9095/api/");
+                    string responseString = "tickets/" + FilmShowId;
+                    HttpResponseMessage response = await client.GetAsync(responseString);
+                    var result = await response.Content.ReadAsStringAsync();
+                    ListTicket = JsonConvert.DeserializeObject<List<Ticket>>(result);
+                    int a = 0;
+                    int i = 0;
 
-
-                };
-                button.HeightRequest = 25;
-                button.FontSize = 12;
-                button.Padding = 1;
-                button.BackgroundColor = Color.LightGray;
-                button.Clicked += new EventHandler(Button_Clicked);
-                button.TabIndex = ticket.Id;
-                Grid.SetColumn(button, i % (int)(a));
-                Grid.SetRow(button, i / (int)a);
-                CinemaRoomView.Children.Add(button);
-                i++;
-                
-                if (ticket.IsFree == false)
+                    foreach (Ticket ticket in ListTicket)
+                    {
+                        Button button = new Button
+                        {
+                            Margin = new Thickness(0.5, 0.5, 0.5, 0.5),
+                            Text = ticket.SeatNumber.ToString(),
+                            HeightRequest = 25,
+                            FontSize = 12,
+                            Padding = 1,
+                            BackgroundColor = Color.LightGray,
+                            TabIndex = ticket.Id,
+                        };
+                        button.Clicked += new EventHandler(Button_Clicked);
+                        Grid.SetColumn(button, i % filmShowRoom.NumberOfColumns);
+                        if (i % filmShowRoom.NumberOfColumns == 0)
+                            a++;
+                        Grid.SetRow(button, a);
+                        CinemaRoomView.Children.Add(button);
+                        i++;
+                        if (ticket.IsFree == false && ticket.IsBought == true)
+                        {
+                            button.BackgroundColor = Color.FromHex("FA4141");
+                            button.IsEnabled = false;
+                        }
+                        if (ticket.IsFree == false && ticket.IsBought == false)
+                        {
+                            button.BackgroundColor = Color.FromHex("F7F72A");
+                            button.IsEnabled = false;
+                        }
+                    }
+                }
+                catch
                 {
-                    button.BackgroundColor = Color.DarkGray;
-                    button.IsEnabled = false;
+                    DependencyService.Get<IMessage>().ShortAlert("Connection error...");
+                    await Navigation.PopToRootAsync();
                 }
             }
+        }
 
+        private async void LoadRoom()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://" + ipConfig.GetIpAsync() + ":9095/api/");
+                try
+                {
+                    string responseString = "rooms/" + filmShow.RoomId;
+                    HttpResponseMessage response = await client.GetAsync(responseString);
+                    var resultRoom = await response.Content.ReadAsStringAsync();
+                    filmShowRoom = JsonConvert.DeserializeObject<Room>(resultRoom);
+                }
+                catch
+                {
+                    DependencyService.Get<IMessage>().ShortAlert("Connection error...");
+
+                }
+            }
+            LoadTickets();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-
             if ((sender as Button).BackgroundColor == Color.LightGray)
             {
                 (sender as Button).BackgroundColor = Color.GreenYellow;
-
-                var client = new HttpClient
+                using (var client = new HttpClient())
                 {
-                    BaseAddress = new Uri("http://192.168.0.102:9095/api/")
-                };
+                    try
+                    {
+                        client.BaseAddress = new Uri("http://" + ipConfig.GetIpAsync() + ":9095/api/");
 
-
-                int x = (sender as Button).TabIndex;
-                Ticket ticket = new Ticket();
-                ticket = ListTicket[Int32.Parse((sender as Button).Text) - 1];
-                ticket.IsFree = false;
-                string responseString = "tickets/" + (sender as Button).TabIndex;
-                var json = JsonConvert.SerializeObject(ticket);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                ListSelectedTickets.Add(ticket);
-
-                HttpResponseMessage response = await client.PutAsync(responseString, content);
-
-
-
+                        Ticket ticket = new Ticket();
+                        ticket = ListTicket[Int32.Parse((sender as Button).Text) - 1];
+                        if (ticket.IsFree == true)
+                        {
+                            ticket.IsFree = false;
+                            string responseString = "tickets/" + (sender as Button).TabIndex;
+                            var json = JsonConvert.SerializeObject(ticket);
+                            var content = new StringContent(json, Encoding.UTF8, "application/json");
+                            ListSelectedTickets.Add(ticket);
+                            HttpResponseMessage response = await client.PutAsync(responseString, content);
+                        }
+                        else
+                        {
+                            DependencyService.Get<IMessage>().ShortAlert("Selected ticket is sold");
+                        }
+                    }
+                    catch
+                    {
+                        DependencyService.Get<IMessage>().ShortAlert("Connection error...");
+                        await Navigation.PopToRootAsync();
+                    }
+                }
             }
             else if ((sender as Button).BackgroundColor == Color.GreenYellow)
             {
                 (sender as Button).BackgroundColor = Color.LightGray;
-                var client = new HttpClient
+                using (var client = new HttpClient())
                 {
-                    BaseAddress = new Uri("http://192.168.0.102:9095/api/")
-                };
+                    try
+                    {
+                        client.BaseAddress = new Uri("http://" + ipConfig.GetIpAsync() + ":9095/api/");
 
-
-                int x = (sender as Button).TabIndex;
-                Ticket ticket = new Ticket();
-                ticket = ListTicket[Int32.Parse((sender as Button).Text) - 1];
-                ticket.IsFree = true;
-                string responseString = "tickets/" + (sender as Button).TabIndex;
-                var json = JsonConvert.SerializeObject(ticket);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                ListSelectedTickets.Remove(ticket);
-                HttpResponseMessage response = await client.PutAsync(responseString, content);
-
-
-
-
+                        int x = (sender as Button).TabIndex;
+                        Ticket ticket = new Ticket();
+                        ticket = ListTicket[Int32.Parse((sender as Button).Text) - 1];
+                        ticket.IsFree = true;
+                        string responseString = "tickets/" + (sender as Button).TabIndex;
+                        var json = JsonConvert.SerializeObject(ticket);
+                        var content = new StringContent(json, Encoding.UTF8, "application/json");
+                        ListSelectedTickets.Remove(ticket);
+                        HttpResponseMessage response = await client.PutAsync(responseString, content);
+                    }
+                    catch
+                    {
+                        DependencyService.Get<IMessage>().ShortAlert("Connection error...");
+                        await Navigation.PopToRootAsync();
+                    }
+                }
             }
-
-
         }
 
         private void Save_Button_Clicked(object sender, EventArgs e)
         {
-
-            Navigation.PushAsync(new BuyTicketView(ListSelectedTickets, filmSelected, selectedFilmShowData));
-
+            Navigation.PushAsync(new BuyData(ListSelectedTickets));
         }
     }
 }

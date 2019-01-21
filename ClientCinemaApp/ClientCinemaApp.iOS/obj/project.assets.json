@@ -145,13 +145,42 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        }
+      },
       "ClientCinemaApp/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
-          "PCLStorage": "1.0.2",
-          "Xamarin.Forms": "3.4.0.1009999"
+          "Xamarin.Forms": "3.4.0.1009999",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1"
         },
         "compile": {
           "bin/placeholder/ClientCinemaApp.dll": {}
@@ -305,13 +334,42 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        }
+      },
       "ClientCinemaApp/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
-          "PCLStorage": "1.0.2",
-          "Xamarin.Forms": "3.4.0.1009999"
+          "Xamarin.Forms": "3.4.0.1009999",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1"
         },
         "compile": {
           "bin/placeholder/ClientCinemaApp.dll": {}
@@ -465,13 +523,42 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        }
+      },
       "ClientCinemaApp/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
-          "PCLStorage": "1.0.2",
-          "Xamarin.Forms": "3.4.0.1009999"
+          "Xamarin.Forms": "3.4.0.1009999",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1"
         },
         "compile": {
           "bin/placeholder/ClientCinemaApp.dll": {}
@@ -625,13 +712,42 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "ZXing.Net.Mobile/2.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll": {},
+          "lib/Xamarin.iOS10/ZXingNetMobile.dll": {},
+          "lib/Xamarin.iOS10/zxing.portable.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll": {},
+          "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll": {}
+        }
+      },
       "ClientCinemaApp/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
-          "PCLStorage": "1.0.2",
-          "Xamarin.Forms": "3.4.0.1009999"
+          "Xamarin.Forms": "3.4.0.1009999",
+          "ZXing.Net.Mobile": "2.4.1",
+          "ZXing.Net.Mobile.Forms": "2.4.1"
         },
         "compile": {
           "bin/placeholder/ClientCinemaApp.dll": {}
@@ -877,6 +993,50 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "ZXing.Net.Mobile/2.4.1": {
+      "sha512": "UJVTeViJx6D5vqhMNzvWw6Jacsm6/mgAGQOMLYIG+DyYHLmY/+OPT5uiGY3CjdcmjnIoiPTXsTgM9YUsgsutVw==",
+      "type": "package",
+      "path": "zxing.net.mobile/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid71/ZXing.Net.Mobile.Core.dll",
+        "lib/MonoAndroid71/ZXingNetMobile.dll",
+        "lib/MonoAndroid71/zxing.portable.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Core.dll",
+        "lib/UAP10/ZXingNetMobile.dll",
+        "lib/UAP10/ZXingNetMobile.pri",
+        "lib/UAP10/ZXingNetMobile/ZXingNetMobile.xr.xml",
+        "lib/UAP10/zxing.portable.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll",
+        "lib/Xamarin.iOS10/ZXingNetMobile.dll",
+        "lib/Xamarin.iOS10/zxing.portable.dll",
+        "lib/netstandard1.0/ZXing.Net.Mobile.Core.dll",
+        "lib/netstandard1.0/ZXingNetMobile.dll",
+        "lib/netstandard1.0/zxing.portable.dll",
+        "zxing.net.mobile.2.4.1.nupkg.sha512",
+        "zxing.net.mobile.nuspec"
+      ]
+    },
+    "ZXing.Net.Mobile.Forms/2.4.1": {
+      "sha512": "LD9SHG/6k+QzVD3gEujl5SF+Bz72VYbMjRos6pf1B3kG/TV5WJ9ygPuazibTTWg0OaKoftPhbmfQYSEfCIXWMA==",
+      "type": "package",
+      "path": "zxing.net.mobile.forms/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid71/ZXing.Net.Mobile.Forms.Android.dll",
+        "lib/MonoAndroid71/ZXing.Net.Mobile.Forms.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.WindowsUniversal.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.WindowsUniversal.pri",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll",
+        "lib/netstandard1.0/ZXing.Net.Mobile.Forms.dll",
+        "zxing.net.mobile.forms.2.4.1.nupkg.sha512",
+        "zxing.net.mobile.forms.nuspec"
+      ]
+    },
     "ClientCinemaApp/1.0.0": {
       "type": "project",
       "path": "../ClientCinemaApp/ClientCinemaApp.csproj",
@@ -887,7 +1047,9 @@
     "Xamarin.iOS,Version=v1.0": [
       "ClientCinemaApp >= 1.0.0",
       "PCLStorage >= 1.0.2",
-      "Xamarin.Forms >= 3.3.0.967583"
+      "Xamarin.Forms >= 3.3.0.967583",
+      "ZXing.Net.Mobile >= 2.4.1",
+      "ZXing.Net.Mobile.Forms >= 2.4.1"
     ]
   },
   "packageFolders": {
@@ -936,6 +1098,14 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[3.3.0.967583, )"
+          },
+          "ZXing.Net.Mobile": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "ZXing.Net.Mobile.Forms": {
+            "target": "Package",
+            "version": "[2.4.1, )"
           }
         }
       }

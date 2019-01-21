@@ -15,6 +15,8 @@ namespace CinemaDatabase.Persistence
         public DbSet<FilmShow> FilmShows { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Room> Rooms { get; set; }
+        public DbSet<Price> Prices { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
 
     }

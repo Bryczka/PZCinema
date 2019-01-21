@@ -2,35 +2,6 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
-      "Microsoft.Bcl/1.1.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl.Build": "1.0.10"
-        },
-        "compile": {
-          "lib/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
-      "Microsoft.Bcl.Async/1.0.165": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl": "1.0.19"
-        },
-        "compile": {
-          "lib/net45/Microsoft.Threading.Tasks.Extensions.dll": {},
-          "lib/net45/Microsoft.Threading.Tasks.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.Threading.Tasks.Extensions.dll": {},
-          "lib/net45/Microsoft.Threading.Tasks.dll": {}
-        }
-      },
-      "Microsoft.Bcl.Build/1.0.10": {
-        "type": "package"
-      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -64,21 +35,6 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "PCLStorage/1.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl": "1.1.6",
-          "Microsoft.Bcl.Async": "1.0.165"
-        },
-        "compile": {
-          "lib/net45/PCLStorage.Abstractions.dll": {},
-          "lib/net45/PCLStorage.dll": {}
-        },
-        "runtime": {
-          "lib/net45/PCLStorage.Abstractions.dll": {},
-          "lib/net45/PCLStorage.dll": {}
-        }
-      },
       "Xamarin.Forms/3.4.0.1009999": {
         "type": "package",
         "compile": {
@@ -95,180 +51,36 @@
           "build/Xamarin.Forms.props": {},
           "build/Xamarin.Forms.targets": {}
         }
+      },
+      "ZXing.Net.Mobile/2.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Core.dll": {},
+          "lib/netstandard1.0/ZXingNetMobile.dll": {},
+          "lib/netstandard1.0/zxing.portable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Core.dll": {},
+          "lib/netstandard1.0/ZXingNetMobile.dll": {},
+          "lib/netstandard1.0/zxing.portable.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203",
+          "ZXing.Net.Mobile": "2.4.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/ZXing.Net.Mobile.Forms.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Microsoft.Bcl/1.1.6": {
-      "sha512": "2RB+44L1oELRo8zgFjFDhssDR8FIpOi3iD8kgxLBog7EJ+PMUpS17AGZ34JOPYHwl4i4weSgelQ/yltZ+Y5yVA==",
-      "type": "package",
-      "path": "microsoft.bcl/1.1.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "License-Stable.rtf",
-        "content/net45/_._",
-        "content/portable-net45+win8+wp8/_._",
-        "content/portable-net451+win81/_._",
-        "content/sl4/_._",
-        "content/sl5/_._",
-        "content/win8/_._",
-        "content/wp8/_._",
-        "lib/net40/System.IO.dll",
-        "lib/net40/System.IO.xml",
-        "lib/net40/System.Runtime.dll",
-        "lib/net40/System.Runtime.xml",
-        "lib/net40/System.Threading.Tasks.dll",
-        "lib/net40/System.Threading.Tasks.xml",
-        "lib/net40/ensureRedirect.xml",
-        "lib/net45/_._",
-        "lib/portable-net40+sl4+win8+wp71/System.IO.dll",
-        "lib/portable-net40+sl4+win8+wp71/System.IO.xml",
-        "lib/portable-net40+sl4+win8+wp71/System.Runtime.dll",
-        "lib/portable-net40+sl4+win8+wp71/System.Runtime.xml",
-        "lib/portable-net40+sl4+win8+wp71/System.Threading.Tasks.dll",
-        "lib/portable-net40+sl4+win8+wp71/System.Threading.Tasks.xml",
-        "lib/portable-net40+sl4+win8+wp71/ensureRedirect.xml",
-        "lib/portable-net40+sl4+win8+wp8/System.IO.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.IO.xml",
-        "lib/portable-net40+sl4+win8+wp8/System.Runtime.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.Runtime.xml",
-        "lib/portable-net40+sl4+win8+wp8/System.Threading.Tasks.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.Threading.Tasks.xml",
-        "lib/portable-net40+sl4+win8+wp8/ensureRedirect.xml",
-        "lib/portable-net40+sl4+win8/System.IO.dll",
-        "lib/portable-net40+sl4+win8/System.IO.xml",
-        "lib/portable-net40+sl4+win8/System.Runtime.dll",
-        "lib/portable-net40+sl4+win8/System.Runtime.xml",
-        "lib/portable-net40+sl4+win8/System.Threading.Tasks.dll",
-        "lib/portable-net40+sl4+win8/System.Threading.Tasks.xml",
-        "lib/portable-net40+sl4+win8/ensureRedirect.xml",
-        "lib/portable-net40+sl5+win8+wp8/System.IO.dll",
-        "lib/portable-net40+sl5+win8+wp8/System.IO.xml",
-        "lib/portable-net40+sl5+win8+wp8/System.Runtime.dll",
-        "lib/portable-net40+sl5+win8+wp8/System.Runtime.xml",
-        "lib/portable-net40+sl5+win8+wp8/System.Threading.Tasks.dll",
-        "lib/portable-net40+sl5+win8+wp8/System.Threading.Tasks.xml",
-        "lib/portable-net40+sl5+win8+wp8/ensureRedirect.xml",
-        "lib/portable-net40+win8+wp8/System.IO.dll",
-        "lib/portable-net40+win8+wp8/System.IO.xml",
-        "lib/portable-net40+win8+wp8/System.Runtime.dll",
-        "lib/portable-net40+win8+wp8/System.Runtime.xml",
-        "lib/portable-net40+win8+wp8/System.Threading.Tasks.dll",
-        "lib/portable-net40+win8+wp8/System.Threading.Tasks.xml",
-        "lib/portable-net40+win8+wp8/ensureRedirect.xml",
-        "lib/portable-net40+win8/System.IO.dll",
-        "lib/portable-net40+win8/System.IO.xml",
-        "lib/portable-net40+win8/System.Runtime.dll",
-        "lib/portable-net40+win8/System.Runtime.xml",
-        "lib/portable-net40+win8/System.Threading.Tasks.dll",
-        "lib/portable-net40+win8/System.Threading.Tasks.xml",
-        "lib/portable-net40+win8/ensureRedirect.xml",
-        "lib/portable-net45+win8+wp8/_._",
-        "lib/portable-net451+win81/_._",
-        "lib/sl4-windowsphone71/System.IO.dll",
-        "lib/sl4-windowsphone71/System.IO.xml",
-        "lib/sl4-windowsphone71/System.Runtime.dll",
-        "lib/sl4-windowsphone71/System.Runtime.xml",
-        "lib/sl4-windowsphone71/System.Threading.Tasks.dll",
-        "lib/sl4-windowsphone71/System.Threading.Tasks.xml",
-        "lib/sl4-windowsphone71/ensureRedirect.xml",
-        "lib/sl4/System.IO.dll",
-        "lib/sl4/System.IO.xml",
-        "lib/sl4/System.Runtime.dll",
-        "lib/sl4/System.Runtime.xml",
-        "lib/sl4/System.Threading.Tasks.dll",
-        "lib/sl4/System.Threading.Tasks.xml",
-        "lib/sl5/System.IO.dll",
-        "lib/sl5/System.IO.xml",
-        "lib/sl5/System.Runtime.dll",
-        "lib/sl5/System.Runtime.xml",
-        "lib/sl5/System.Threading.Tasks.dll",
-        "lib/sl5/System.Threading.Tasks.xml",
-        "lib/win8/_._",
-        "lib/wp8/_._",
-        "microsoft.bcl.1.1.6.nupkg.sha512",
-        "microsoft.bcl.nuspec"
-      ]
-    },
-    "Microsoft.Bcl.Async/1.0.165": {
-      "sha512": "/7B77Vxe7LB3u6nLA2lvyN7QQfFWwq+FivTEWQ/zh9dEq/Vyq66cshNxnGv1FI+eyxa2znsGexrDSpvqVdJpAw==",
-      "type": "package",
-      "path": "microsoft.bcl.async/1.0.165",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "License-Stable.rtf",
-        "lib/net40/Microsoft.Threading.Tasks.Extensions.Desktop.dll",
-        "lib/net40/Microsoft.Threading.Tasks.Extensions.Desktop.xml",
-        "lib/net40/Microsoft.Threading.Tasks.Extensions.dll",
-        "lib/net40/Microsoft.Threading.Tasks.Extensions.xml",
-        "lib/net40/Microsoft.Threading.Tasks.dll",
-        "lib/net40/Microsoft.Threading.Tasks.xml",
-        "lib/net45/Microsoft.Threading.Tasks.Extensions.dll",
-        "lib/net45/Microsoft.Threading.Tasks.Extensions.xml",
-        "lib/net45/Microsoft.Threading.Tasks.dll",
-        "lib/net45/Microsoft.Threading.Tasks.xml",
-        "lib/portable-net40+sl4+win8+wp71/Microsoft.Threading.Tasks.Extensions.dll",
-        "lib/portable-net40+sl4+win8+wp71/Microsoft.Threading.Tasks.Extensions.xml",
-        "lib/portable-net40+sl4+win8+wp71/Microsoft.Threading.Tasks.dll",
-        "lib/portable-net40+sl4+win8+wp71/Microsoft.Threading.Tasks.xml",
-        "lib/portable-net45+win8+wp8/Microsoft.Threading.Tasks.Extensions.dll",
-        "lib/portable-net45+win8+wp8/Microsoft.Threading.Tasks.Extensions.xml",
-        "lib/portable-net45+win8+wp8/Microsoft.Threading.Tasks.dll",
-        "lib/portable-net45+win8+wp8/Microsoft.Threading.Tasks.xml",
-        "lib/portable-net45+win8/Microsoft.Threading.Tasks.Extensions.dll",
-        "lib/portable-net45+win8/Microsoft.Threading.Tasks.Extensions.xml",
-        "lib/portable-net45+win8/Microsoft.Threading.Tasks.dll",
-        "lib/portable-net45+win8/Microsoft.Threading.Tasks.xml",
-        "lib/sl4-windowsphone71/Microsoft.Threading.Tasks.Extensions.Phone.dll",
-        "lib/sl4-windowsphone71/Microsoft.Threading.Tasks.Extensions.Phone.xml",
-        "lib/sl4-windowsphone71/Microsoft.Threading.Tasks.Extensions.dll",
-        "lib/sl4-windowsphone71/Microsoft.Threading.Tasks.Extensions.xml",
-        "lib/sl4-windowsphone71/Microsoft.Threading.Tasks.dll",
-        "lib/sl4-windowsphone71/Microsoft.Threading.Tasks.xml",
-        "lib/sl4/Microsoft.Threading.Tasks.Extensions.Silverlight.dll",
-        "lib/sl4/Microsoft.Threading.Tasks.Extensions.Silverlight.xml",
-        "lib/sl4/Microsoft.Threading.Tasks.Extensions.dll",
-        "lib/sl4/Microsoft.Threading.Tasks.Extensions.xml",
-        "lib/sl4/Microsoft.Threading.Tasks.dll",
-        "lib/sl4/Microsoft.Threading.Tasks.xml",
-        "lib/win8/Microsoft.Threading.Tasks.Extensions.dll",
-        "lib/win8/Microsoft.Threading.Tasks.Extensions.xml",
-        "lib/win8/Microsoft.Threading.Tasks.dll",
-        "lib/win8/Microsoft.Threading.Tasks.xml",
-        "lib/wp8/Microsoft.Threading.Tasks.Extensions.Phone.dll",
-        "lib/wp8/Microsoft.Threading.Tasks.Extensions.Phone.xml",
-        "lib/wp8/Microsoft.Threading.Tasks.Extensions.dll",
-        "lib/wp8/Microsoft.Threading.Tasks.Extensions.xml",
-        "lib/wp8/Microsoft.Threading.Tasks.dll",
-        "lib/wp8/Microsoft.Threading.Tasks.xml",
-        "microsoft.bcl.async.1.0.165.nupkg.sha512",
-        "microsoft.bcl.async.nuspec"
-      ]
-    },
-    "Microsoft.Bcl.Build/1.0.10": {
-      "sha512": "UdtAwAoXLgiL9AsaXmZ7Mxcnl5xDjuK64aMR7+/9SAbUpbWRbg9bPAKtHJRGBeGFA9ehF4mW8WKQ6DCqSbEKPw==",
-      "type": "package",
-      "path": "microsoft.bcl.build/1.0.10",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "License-Stable.rtf",
-        "content/net40/_._",
-        "content/netcore45/_._",
-        "content/portable-net40+win8+sl4+wp71/_._",
-        "content/sl4-windowsphone71/_._",
-        "content/sl4/_._",
-        "microsoft.bcl.build.1.0.10.nupkg.sha512",
-        "microsoft.bcl.build.nuspec",
-        "tools/Install.ps1",
-        "tools/Microsoft.Bcl.Build.Tasks.dll",
-        "tools/Microsoft.Bcl.Build.targets",
-        "tools/Uninstall.ps1"
-      ]
-    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -450,53 +262,6 @@
         "newtonsoft.json.nuspec"
       ]
     },
-    "PCLStorage/1.0.2": {
-      "sha512": "gj37kg2DqlKADjnoax9wqSLSo9ZeEBRTEqfXg3R+fm2sbgst2B0Xa6TX1sh2ORrj83vk8lzyZ/DGEQx7c2QKPg==",
-      "type": "package",
-      "path": "pclstorage/1.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/monoandroid/PCLStorage.Abstractions.dll",
-        "lib/monoandroid/PCLStorage.Abstractions.xml",
-        "lib/monoandroid/PCLStorage.dll",
-        "lib/monoandroid/PCLStorage.xml",
-        "lib/monotouch/PCLStorage.Abstractions.dll",
-        "lib/monotouch/PCLStorage.Abstractions.xml",
-        "lib/monotouch/PCLStorage.dll",
-        "lib/monotouch/PCLStorage.xml",
-        "lib/net45/PCLStorage.Abstractions.dll",
-        "lib/net45/PCLStorage.Abstractions.xml",
-        "lib/net45/PCLStorage.dll",
-        "lib/net45/PCLStorage.xml",
-        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll",
-        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.xml",
-        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll",
-        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.xml",
-        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll",
-        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.xml",
-        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.dll",
-        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.xml",
-        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll",
-        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.xml",
-        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.dll",
-        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.xml",
-        "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll",
-        "lib/portable-win8+wpa81/PCLStorage.Abstractions.xml",
-        "lib/portable-win8+wpa81/PCLStorage.dll",
-        "lib/portable-win8+wpa81/PCLStorage.xml",
-        "lib/sl5/PCLStorage.Abstractions.dll",
-        "lib/sl5/PCLStorage.Abstractions.xml",
-        "lib/sl5/PCLStorage.dll",
-        "lib/sl5/PCLStorage.xml",
-        "lib/wp8/PCLStorage.Abstractions.dll",
-        "lib/wp8/PCLStorage.Abstractions.xml",
-        "lib/wp8/PCLStorage.dll",
-        "lib/wp8/PCLStorage.xml",
-        "pclstorage.1.0.2.nupkg.sha512",
-        "pclstorage.nuspec"
-      ]
-    },
     "Xamarin.Forms/3.4.0.1009999": {
       "sha512": "pgqRxgD23FJHG2B7zOxf4Fm+KYgoWctUJp8hNtdZgAt43RIiK3VgM11wJf3S0SkMIsXQCUL0yYQmR8gR/njltA==",
       "type": "package",
@@ -644,14 +409,59 @@
         "xamarin.forms.3.4.0.1009999.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
+    },
+    "ZXing.Net.Mobile/2.4.1": {
+      "sha512": "UJVTeViJx6D5vqhMNzvWw6Jacsm6/mgAGQOMLYIG+DyYHLmY/+OPT5uiGY3CjdcmjnIoiPTXsTgM9YUsgsutVw==",
+      "type": "package",
+      "path": "zxing.net.mobile/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid71/ZXing.Net.Mobile.Core.dll",
+        "lib/MonoAndroid71/ZXingNetMobile.dll",
+        "lib/MonoAndroid71/zxing.portable.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Core.dll",
+        "lib/UAP10/ZXingNetMobile.dll",
+        "lib/UAP10/ZXingNetMobile.pri",
+        "lib/UAP10/ZXingNetMobile/ZXingNetMobile.xr.xml",
+        "lib/UAP10/zxing.portable.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll",
+        "lib/Xamarin.iOS10/ZXingNetMobile.dll",
+        "lib/Xamarin.iOS10/zxing.portable.dll",
+        "lib/netstandard1.0/ZXing.Net.Mobile.Core.dll",
+        "lib/netstandard1.0/ZXingNetMobile.dll",
+        "lib/netstandard1.0/zxing.portable.dll",
+        "zxing.net.mobile.2.4.1.nupkg.sha512",
+        "zxing.net.mobile.nuspec"
+      ]
+    },
+    "ZXing.Net.Mobile.Forms/2.4.1": {
+      "sha512": "LD9SHG/6k+QzVD3gEujl5SF+Bz72VYbMjRos6pf1B3kG/TV5WJ9ygPuazibTTWg0OaKoftPhbmfQYSEfCIXWMA==",
+      "type": "package",
+      "path": "zxing.net.mobile.forms/2.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid71/ZXing.Net.Mobile.Forms.Android.dll",
+        "lib/MonoAndroid71/ZXing.Net.Mobile.Forms.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.WindowsUniversal.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.WindowsUniversal.pri",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll",
+        "lib/netstandard1.0/ZXing.Net.Mobile.Forms.dll",
+        "zxing.net.mobile.forms.2.4.1.nupkg.sha512",
+        "zxing.net.mobile.forms.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.1",
-      "PCLStorage >= 1.0.2",
-      "Xamarin.Forms >= 3.4.0.1009999"
+      "Xamarin.Forms >= 3.4.0.1009999",
+      "ZXing.Net.Mobile >= 2.4.1",
+      "ZXing.Net.Mobile.Forms >= 2.4.1"
     ]
   },
   "packageFolders": {
@@ -707,13 +517,17 @@
             "target": "Package",
             "version": "[12.0.1, )"
           },
-          "PCLStorage": {
-            "target": "Package",
-            "version": "[1.0.2, )"
-          },
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[3.4.0.1009999, )"
+          },
+          "ZXing.Net.Mobile": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "ZXing.Net.Mobile.Forms": {
+            "target": "Package",
+            "version": "[2.4.1, )"
           }
         },
         "imports": [
@@ -723,37 +537,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Pakiet „Microsoft.Bcl 1.1.6” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1” zamiast platformy docelowej projektu „.NETStandard,Version=v2.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
-      "libraryId": "Microsoft.Bcl",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Pakiet „Microsoft.Bcl.Async 1.0.165” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1” zamiast platformy docelowej projektu „.NETStandard,Version=v2.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
-      "libraryId": "Microsoft.Bcl.Async",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Pakiet „PCLStorage 1.0.2” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1” zamiast platformy docelowej projektu „.NETStandard,Version=v2.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
-      "libraryId": "PCLStorage",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.0"
-      ]
-    }
-  ]
+  }
 }

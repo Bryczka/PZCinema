@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ClientCinemaApp
 {
@@ -8,15 +6,12 @@ namespace ClientCinemaApp
     {
         public int Id { get; set; }
         public string Time { get; set; }
-
         public string RoomName { get; set; }
+        public int RoomId { get; set; }
         public int NumberOfSeats { get; set; }
-
         public Film Film { get; set; }
         public IList<Ticket> Tickets { get; set; }
-
-
-
+        public int FilmId { get; set; }
 
     }
 }

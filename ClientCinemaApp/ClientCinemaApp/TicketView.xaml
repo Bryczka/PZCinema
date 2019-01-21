@@ -19,7 +19,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                 </Grid>
-                <Button Text="Buy selected seats" Clicked="Save_Button_Clicked"></Button>
+                <Button Text="Buy selected seats" Clicked="Save_Button_Clicked" BackgroundColor="WhiteSmoke"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -8,11 +8,11 @@ namespace CinemaDatabase
         public string Time { get; set; }
 
         public string RoomName { get; set; }
+        public int RoomId { get; set; }
         public int NumberOfSeats { get; set; }
-
+        public int FilmId { get; set; }
         public Film Film { get; set; }
         public IList<Ticket> Tickets { get; set; }
-
 
 
 

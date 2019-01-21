@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClientCinemaApp.ChangeIpView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Connections error! Change IP address." />
-            <Entry x:Name="IpTextBox"></Entry>
-            <Button x:Name="SaveIp" Text="Click to save ip" Clicked="SaveIp_Clicked"></Button>
+        <StackLayout BackgroundColor="DimGray">
+            <Label Text="Connections error! Change IP address." FontSize="20" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="IpTextBox" TextColor="White" FontSize="20"></Entry>
+            <Button x:Name="SaveIp" Text="Click to save ip" Clicked="SaveIp_Clicked" BackgroundColor="WhiteSmoke" FontSize="20"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

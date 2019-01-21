@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientCinemaApp.BuyData">
+    <ContentPage.Content VerticalOptions="Center" HorizontalOptions="Center">
+        <StackLayout BackgroundColor="DimGray" >
+            <Label Text="Put your e-mail address here: " FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin=" 40,5,10,5"/>
+            <Entry x:Name="EmailEntry" Margin="10,10,10,10"/>
+            <Button x:Name="ConfirmButton" Text="Done" Clicked="ConfirmButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

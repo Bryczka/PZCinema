@@ -1,0 +1,11 @@
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\AdminCinemaApp.csprojAssemblyReference.cache
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\AddFilm.g.cs
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\AddFilmShow.g.cs
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\AddRoom.g.cs
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\AddTicketType.g.cs
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\BuyTicket.g.cs
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\MainWindow.g.cs
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\SetIp.g.cs
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\App.g.cs
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\AdminCinemaApp_MarkupCompile.cache
+C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Release\AdminCinemaApp_MarkupCompile.lref

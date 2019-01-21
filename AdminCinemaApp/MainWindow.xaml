@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:AdminCinemaApp"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:dxpdf="http://schemas.devexpress.com/winfx/2008/xaml/pdf"
+    xmlns:CollectionViewSourcex="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
     x:Class="AdminCinemaApp.MainWindow"
     Width="800"
     Height="450"
@@ -18,12 +19,19 @@
         <CollectionViewSource x:Key="filmViewSource" d:DesignSource="{d:DesignInstance {x:Type CinemaDatabase:Film}, CreateList=True}" />
         <CollectionViewSource x:Key="filmShowViewSource" d:DesignSource="{d:DesignInstance {x:Type CinemaDatabase:FilmShow}, CreateList=True}"/>
         <CollectionViewSource x:Key="ticketViewSource" d:DesignSource="{d:DesignInstance {x:Type CinemaDatabase:Ticket}, CreateList=True}"/>
+        <CollectionViewSource x:Key="roomViewSource" d:DesignSource="{d:DesignInstance {x:Type CinemaDatabase:Room}, CreateList=True}"/>
+        <CollectionViewSource x:Key="priceViewSource" d:DesignSource="{d:DesignInstance {x:Type CinemaDatabase:Price}, CreateList=True}"/>
+        <CollectionViewSource x:Key="userViewSource" d:DesignSource="{d:DesignInstance {x:Type CinemaDatabase:Employee}, CreateList=True}"/>
     </Window.Resources>
 
     <Grid DataContext="{StaticResource filmViewSource}">
         <TabControl>
-            <TabItem Header="Obecnie dostepne filmy" Margin="0,0,-52,-0.6">
+            <TabItem Header="Current films" Width="Auto">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="59*"/>
+                        <ColumnDefinition Width="11*"/>
+                    </Grid.ColumnDefinitions>
 
 
                     <DataGrid
@@ -62,10 +70,10 @@
                         </DataGrid.Columns>
                     </DataGrid>
                     <Button Content="Add new film" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="146" Height="35" Click="AddFilm_Button"/>
-                    <Button Content="Delete choosen film" HorizontalAlignment="Left" Margin="161,43,0,0" VerticalAlignment="Top" Width="146" Height="35" Click="DeleteFilm_Button" Grid.ColumnSpan="2"/>
+                    <Button Content="Delete choosen film" HorizontalAlignment="Left" Margin="161,43,0,0" VerticalAlignment="Top" Width="146" Height="35" Click="DeleteFilm_Button"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Obecne senase" Margin="52,0,-148.8,-0.6">
+            <TabItem Header="Filmshows" Width="Auto">
                 <Grid>
 
                     <DataGrid x:Name="filmShowDataGrid" Margin="10,85,99.6,10.4" ItemsSource="{Binding Source={StaticResource filmShowViewSource}}" AutoGenerateColumns="False" Grid.ColumnSpan="2" IsReadOnly="True">
@@ -104,9 +112,9 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Bilety" Margin="148.8,0,-224,0.4" >
+            <TabItem Header="Tickets" Width="Auto" >
                 <Grid>
-                    <DataGrid x:Name="ticketsDataGrid" Margin="10,85,99.6,10.4" ItemsSource="{Binding Source={StaticResource ticketViewSource}}" AutoGenerateColumns="False" IsReadOnly="true" >
+                    <DataGrid x:Name="ticketsDataGrid" Margin="10,41,100,10.2" ItemsSource="{Binding Source={StaticResource ticketViewSource}}"  AutoGenerateColumns="False" IsReadOnly="true" >
                         <DataGrid.Columns >
                             <DataGridTextColumn
                             x:Name="filmTitleOnTicket"
@@ -143,20 +151,105 @@
                             Width="Auto"
                             Binding="{Binding IsFree}"
                             Header="Is seat free?"/>
+                            <DataGridTextColumn
+                            x:Name="filmIsBoughtTicket"
+                            Width="Auto"
+                            Binding="{Binding IsBought}"
+                            Header="Is seat bought?" />
+                            <DataGridTextColumn
+                            x:Name="emailOnTicket"
+                            Width="Auto"
+                            Binding="{Binding UserEmail}"
+                            Header="User email" />
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button Content="Buy selected ticket" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="146" Height="35" Click="BuyTicket_Button"/>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Konsola serwera" Margin="224.2,0,-349,0.4" >
+            <TabItem Header="Price and rooms" Width="Auto" >
                 <Grid>
-                    <TextBox x:Name="ConsoleWindow" HorizontalAlignment="Left" Height="346" Margin="21,18,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="724"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
+                    <DataGrid x:Name="priceDataGrid" Margin="10,85,9.8,10.4" Grid.Column="0" ItemsSource="{Binding Source={StaticResource priceViewSource}}" AutoGenerateColumns="False" IsReadOnly="true" >
+                        <DataGrid.Columns >
+                            <DataGridTextColumn
+                            x:Name="ticketType"
+                            Width="Auto"
+                            Binding="{Binding TypeOfTicket}"
+                            Header="Type of ticket" />
+                            <DataGridTextColumn
+                            x:Name="ticketPrice"
+                            Width="auto"
+                            Binding="{Binding Cost}"
+                            Header="Price of ticket" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <DataGrid x:Name="roomDataGrid" Margin="10,85,9.8,10.4" Grid.Column="1" ItemsSource="{Binding Source={StaticResource roomViewSource}}" AutoGenerateColumns="False" IsReadOnly="true" >
+                        <DataGrid.Columns >
+                            <DataGridTextColumn
+                            x:Name="roomName"
+                            Width="Auto"
+                            Binding="{Binding Name}"
+                            Header="Name of room" />
+                            <DataGridTextColumn
+                            x:Name="seatsNumber"
+                            Width="auto"
+                            Binding="{Binding NumberOfSeats}"
+                            Header="Number of seats" />
+                            <DataGridTextColumn
+                            x:Name="rowsNumber"
+                            Width="auto"
+                            Binding="{Binding NumberOfRows}"
+                            Header="Rows" />
+                            <DataGridTextColumn
+                            x:Name="columnssNumber"
+                            Width="auto"
+                            Binding="{Binding NumberOfColumns}"
+                            Header="Columns" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Grid.Column="0" Content="Add new ticket type" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="146" Height="35" Click="AddTicketType_Click"/>
+                    <Button Grid.Column="0" Content="Delete ticket type" HorizontalAlignment="Left" Margin="161,46,0,0" VerticalAlignment="Top" Width="151" Height="35" Click="DeleteTicketType_Click"/>
+                    <Button Grid.Column="1" Content="Add new room" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="146" Height="35" Click="AddRoom_Click"/>
+                    <Button Grid.Column="1" Content="Delete room" HorizontalAlignment="Left" Margin="161.2,46,0,0" VerticalAlignment="Top" Width="146" Height="35" Click="DeleteRoom_Click"/>
                 </Grid>
             </TabItem>
 
+            <TabItem Header="Employees" Width="Auto" >
+                <Grid>
+                    <DataGrid x:Name="employeeDataGrid" Margin="10,85,99.6,10.4"  AutoGenerateColumns="False" IsReadOnly="true" ItemsSource="{Binding Source={StaticResource userViewSource}}" >
+                        <DataGrid.Columns >
+                            <DataGridTextColumn
+                            x:Name="employeeId"
+                            Width="Auto"
+                            Binding="{Binding Id}"
+                            Header="Employee ID" />
+                            <DataGridTextColumn
+                            x:Name="employeeName"
+                            Width="auto"
+                            Binding="{Binding Name}"
+                            Header="Name" />
+                            <DataGridTextColumn
+                            x:Name="employeeSurname"
+                            Width="Auto"
+                            Binding="{Binding Surname}"
+                            Header="Surname" />
+                            <DataGridTextColumn
+                            x:Name="employeeEmail"
+                            Width="Auto"
+                            Binding="{Binding Email}"
+                            Header="Employee email" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="Add employee" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="146" Height="35" Click="AddEmployee_Click"/>
+                    <Button Content="Delete employee" HorizontalAlignment="Left" Margin="161,45,0,0" VerticalAlignment="Top" Width="152" Height="35" Click="DeleteEmployee_Click"/>
 
+                </Grid>
+            </TabItem>
 
         </TabControl>
     </Grid>
