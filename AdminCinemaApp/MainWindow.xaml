@@ -161,6 +161,11 @@
                             Width="Auto"
                             Binding="{Binding UserEmail}"
                             Header="User email" />
+                            <DataGridTextColumn
+                            x:Name="isUsedTicket"
+                            Width="Auto"
+                            Binding="{Binding IsUsed}"
+                            Header="Is used?" />
                         </DataGrid.Columns>
                     </DataGrid>
 

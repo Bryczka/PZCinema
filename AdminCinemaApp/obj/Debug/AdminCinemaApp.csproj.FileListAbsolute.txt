@@ -25,8 +25,6 @@ C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Debug\AddFilm.g.
 C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Debug\AddFilm.baml
 C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Debug\AddFilmShow.g.cs
 C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Debug\AddFilmShow.baml
-C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Debug\BuyTicket.g.cs
-C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\obj\Debug\BuyTicket.baml
 C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\bin\Debug\Microsoft.Owin.Diagnostics.dll
 C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\bin\Debug\Microsoft.Owin.dll
 C:\Users\Michał\source\repos\CInemaDatabase\AdminCinemaApp\bin\Debug\Microsoft.Owin.Host.HttpListener.dll

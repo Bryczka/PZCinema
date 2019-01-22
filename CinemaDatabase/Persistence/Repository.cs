@@ -10,7 +10,6 @@ namespace CinemaDatabase.Persistence
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext Context;
-
         public Repository(DbContext context)
         {
             Context = context;
@@ -19,14 +18,10 @@ namespace CinemaDatabase.Persistence
         {
             Context.Set<TEntity>().Add(entity);
         }
-
         public IEnumerable<TEntity> GetDetailed(Expression<Func<TEntity, bool>> predicate)
         {
-
             return Context.Set<TEntity>().Where(predicate);
-
         }
-
         public TEntity Get(int id)
         {
             return Context.Set<TEntity>().Find(id);
@@ -41,8 +36,5 @@ namespace CinemaDatabase.Persistence
         {
             Context.Set<TEntity>().Remove(entity);
         }
-
-
-
     }
 }

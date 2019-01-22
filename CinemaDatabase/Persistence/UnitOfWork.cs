@@ -16,17 +16,13 @@ namespace CinemaDatabase.Persistence
             Room = new RoomRepository(_context);
             Price = new PriceRepository(_context);
             Employee = new EmployeeRepository(_context);
-
         }
         public IFilmShowRepository FilmShow { get; private set; }
         public IFilmRepository Film { get; private set; }
         public ITicketRepository Ticket { get; private set; }
-
         public IRoomRepository Room { get; private set; }
         public IPriceRepository Price { get; private set; }
-
         public IEmployeeRepository Employee { get; private set; }
-
         public int Complete()
         {
             return _context.SaveChanges();
@@ -35,7 +31,6 @@ namespace CinemaDatabase.Persistence
         public void Dispose()
         {
             _context.Dispose();
-
         }
     }
 }

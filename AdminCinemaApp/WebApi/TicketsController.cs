@@ -12,8 +12,6 @@ namespace AdminCinemaApp
 
     public class TicketsController : ApiController
     {
-
-
         // GET api/demo 
 
         public HttpResponseMessage Get(string email)
@@ -27,19 +25,16 @@ namespace AdminCinemaApp
             var json = ListTickets;
            return Request.CreateResponse(HttpStatusCode.OK, json, Configuration.Formatters.JsonFormatter);
 
-
         }
 
         public HttpResponseMessage Get(int id, string tick)
         {
-
             var context = new CinemaContext();
             UnitOfWork unitOfWork = new UnitOfWork(context);
             Ticket ticket = new Ticket();
             ticket= unitOfWork.Ticket.Get(id);
             var json = ticket;
             return Request.CreateResponse(HttpStatusCode.OK, json, Configuration.Formatters.JsonFormatter);
-
 
         }
 
@@ -55,7 +50,6 @@ namespace AdminCinemaApp
             return Request.CreateResponse(HttpStatusCode.OK, json, Configuration.Formatters.JsonFormatter);
 
         }
-
         // POST api/demo 
         public void Post([FromBody]string value)
         {
@@ -99,6 +93,7 @@ namespace AdminCinemaApp
                       </body>
                       </html>
                      ";
+
                 sendEmail.Send(subject, message, email);
 
             }
@@ -114,15 +109,22 @@ namespace AdminCinemaApp
             var context = new CinemaContext();
             UnitOfWork unitOfWork = new UnitOfWork(context);
 
-
-
             unitOfWork.Ticket.Get(id).IsFree = true;
             unitOfWork.Ticket.Get(id).Price = 0;
             unitOfWork.Ticket.Get(id).Type = "";
             unitOfWork.Ticket.Get(id).IsBought = false;
             unitOfWork.Ticket.Get(id).UserEmail = "";
             unitOfWork.Complete();
+            MainWindow.reload = false;
+        }
 
+        [HttpDelete]
+        public void Delete(int id, string tick)
+        {
+            var context = new CinemaContext();
+            UnitOfWork unitOfWork = new UnitOfWork(context);
+            unitOfWork.Ticket.Get(id).IsUsed = true;
+            unitOfWork.Complete();
             MainWindow.reload = false;
         }
 

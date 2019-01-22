@@ -17,6 +17,7 @@ namespace CinemaDatabase
         public DateTime ChooseTime { get; set; }
         public DateTime BuyTime { get; set; }
         public string UserEmail { get; set; }
+        public bool IsUsed { get; set; }
 
 
 

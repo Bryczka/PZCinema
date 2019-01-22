@@ -15,26 +15,31 @@ namespace ClientCinemaApp
         List<Ticket> ListTickets = new List<Ticket>();
         string userEmail;
         IpConfig ipConfig = new IpConfig();
-
         public AllTicketsPage(string email)
         {
             InitializeComponent();
             userEmail = email;
             GetTickets();
-        }
 
+        }
         private void SetPicker()
         {
-            ticketPicker.ItemsSource = ListTickets;
-            ticketPicker.SelectedIndexChanged += Picker_SelectedIndexChanged;
-            ticketPicker.ItemDisplayBinding = new Binding("Id");
-            ticketPicker.SelectedIndex = 0;
-            string id = ((Ticket)ticketPicker.SelectedItem).Id.ToString();
-            var stream = DependencyService.Get<IBarcodeService>().ConvertImageStream(id, 500, 500);
-            QRcode.Source = ImageSource.FromStream(() => { return stream; });
-
+            try
+            {
+                ticketPicker.ItemsSource = ListTickets;
+                ticketPicker.SelectedIndexChanged += Picker_SelectedIndexChanged;
+                ticketPicker.ItemDisplayBinding = new Binding("Id");
+                ticketPicker.SelectedIndex = 0;
+                string id = ((Ticket)ticketPicker.SelectedItem).Id.ToString();
+                var stream = DependencyService.Get<IBarcodeService>().ConvertImageStream(id, 500, 500);
+                QRcode.Source = ImageSource.FromStream(() => { return stream; });
+            }
+            catch
+            {
+                DependencyService.Get<IMessage>().ShortAlert("No assigned to this mail tickets found. Try again");
+                Navigation.PopToRootAsync();
+            }
         }
-
 
         void OnSwiped(object sender, SwipedEventArgs e)
         {
@@ -70,6 +75,7 @@ namespace ClientCinemaApp
                 catch
                 {
                     DependencyService.Get<IMessage>().ShortAlert("Logging error...");
+                   
                 }
             }
             SetPicker();
@@ -102,7 +108,6 @@ namespace ClientCinemaApp
                     HttpResponseMessage response = await client.GetAsync(responseString);
                     var result = await response.Content.ReadAsStringAsync();
                     selectedTicketFilm = JsonConvert.DeserializeObject<Film>(result);
-
                 }
                 catch
                 {

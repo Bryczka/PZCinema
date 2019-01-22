@@ -23,13 +23,11 @@ namespace AdminCinemaApp
                     streamReader.Close();
                     return readValue;
                 }
-
             }
             catch
             {
                 return "000.000.0.000";
             }
-
         }
 
         public void SetIp(string NewIp)

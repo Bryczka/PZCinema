@@ -22,7 +22,7 @@
           "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
         }
       },
-      "Xamarin.Forms/3.3.0.967583": {
+      "Xamarin.Forms/3.4.0.1009999": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -211,7 +211,7 @@
           "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
         }
       },
-      "Xamarin.Forms/3.3.0.967583": {
+      "Xamarin.Forms/3.4.0.1009999": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -400,7 +400,7 @@
           "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
         }
       },
-      "Xamarin.Forms/3.3.0.967583": {
+      "Xamarin.Forms/3.4.0.1009999": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -589,7 +589,7 @@
           "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
         }
       },
-      "Xamarin.Forms/3.3.0.967583": {
+      "Xamarin.Forms/3.4.0.1009999": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -845,10 +845,10 @@
         "pclstorage.nuspec"
       ]
     },
-    "Xamarin.Forms/3.3.0.967583": {
-      "sha512": "aebAEUHkER6WRo4WpsDd8jq4EudSl3WS4n7Pxcq8ea+x9fHi9PstCU0dU2D5PGvSeKa3yEFSpRljOEjI7qtsNA==",
+    "Xamarin.Forms/3.4.0.1009999": {
+      "sha512": "pgqRxgD23FJHG2B7zOxf4Fm+KYgoWctUJp8hNtdZgAt43RIiK3VgM11wJf3S0SkMIsXQCUL0yYQmR8gR/njltA==",
       "type": "package",
-      "path": "xamarin.forms/3.3.0.967583",
+      "path": "xamarin.forms/3.4.0.1009999",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -856,14 +856,14 @@
         "build/Xamarin.Forms.DefaultItems.targets",
         "build/Xamarin.Forms.props",
         "build/Xamarin.Forms.targets",
-        "build/net461/Mono.Cecil.Mdb.dll",
-        "build/net461/Mono.Cecil.Pdb.dll",
-        "build/net461/Mono.Cecil.Rocks.dll",
-        "build/net461/Mono.Cecil.dll",
-        "build/net461/System.CodeDom.dll",
-        "build/net461/Xamarin.Forms.Build.Tasks.dll",
-        "build/net461/Xamarin.Forms.Core.dll",
-        "build/net461/Xamarin.Forms.Xaml.dll",
+        "build/net46/Mono.Cecil.Mdb.dll",
+        "build/net46/Mono.Cecil.Pdb.dll",
+        "build/net46/Mono.Cecil.Rocks.dll",
+        "build/net46/Mono.Cecil.dll",
+        "build/net46/System.ValueTuple.dll",
+        "build/net46/Xamarin.Forms.Build.Tasks.dll",
+        "build/net46/Xamarin.Forms.Core.dll",
+        "build/net46/Xamarin.Forms.Xaml.dll",
         "build/netstandard2.0/Mono.Cecil.Mdb.dll",
         "build/netstandard2.0/Mono.Cecil.Pdb.dll",
         "build/netstandard2.0/Mono.Cecil.Rocks.dll",
@@ -875,13 +875,11 @@
         "lib/MonoAndroid10/Design/Xamarin.Forms.Core.Design.dll",
         "lib/MonoAndroid10/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/MonoAndroid10/FormsViewGroup.dll",
-        "lib/MonoAndroid10/FormsViewGroup.dll.mdb",
         "lib/MonoAndroid10/FormsViewGroup.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Core.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll",
@@ -970,6 +968,7 @@
         "lib/uap10.0/Design/Xamarin.Forms.Core.Design.dll",
         "lib/uap10.0/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/uap10.0/Xamarin.Forms.Core.dll",
+        "lib/uap10.0/Xamarin.Forms.Core.pdb",
         "lib/uap10.0/Xamarin.Forms.Core.xml",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP.pri",
@@ -988,8 +987,9 @@
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Xamarin.Forms.Platform.UAP.xr.xml",
         "lib/uap10.0/Xamarin.Forms.Platform.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
+        "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.3.0.967583.nupkg.sha512",
+        "xamarin.forms.3.4.0.1009999.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1047,7 +1047,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "ClientCinemaApp >= 1.0.0",
       "PCLStorage >= 1.0.2",
-      "Xamarin.Forms >= 3.3.0.967583",
+      "Xamarin.Forms >= 3.4.0.1009999",
       "ZXing.Net.Mobile >= 2.4.1",
       "ZXing.Net.Mobile.Forms >= 2.4.1"
     ]
@@ -1097,7 +1097,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.3.0.967583, )"
+            "version": "[3.4.0.1009999, )"
           },
           "ZXing.Net.Mobile": {
             "target": "Package",
@@ -1121,20 +1121,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Wykryto obniżenie wersji pakietu: Xamarin.Forms z 3.4.0.1009999 na 3.3.0.967583. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n ClientCinemaApp.iOS -> ClientCinemaApp -> Xamarin.Forms (>= 3.4.0.1009999) \r\n ClientCinemaApp.iOS -> Xamarin.Forms (>= 3.3.0.967583)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    }
-  ]
+  }
 }

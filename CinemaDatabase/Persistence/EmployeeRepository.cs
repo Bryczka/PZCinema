@@ -8,7 +8,6 @@ namespace CinemaDatabase.Persistence
         {
 
         }
-
         public CinemaContext CinemaContext
         {
             get { return Context as CinemaContext; }

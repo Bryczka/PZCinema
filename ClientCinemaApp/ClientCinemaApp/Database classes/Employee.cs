@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace ClientCinemaApp.Database_classes
+﻿namespace ClientCinemaApp.Database_classes
 {
 
     public class Employee
     {
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -13,6 +10,4 @@ namespace ClientCinemaApp.Database_classes
         public string Email { get; set; }
 
     }
-
-
 }

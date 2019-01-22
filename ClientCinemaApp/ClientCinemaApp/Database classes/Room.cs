@@ -9,9 +9,6 @@ namespace ClientCinemaApp
         public int NumberOfSeats { get; set; }
         public int NumberOfRows { get; set; }
         public int NumberOfColumns { get; set; }
-
         public IList<FilmShow> FilmShow { get; set; }
     }
-
-    
 }

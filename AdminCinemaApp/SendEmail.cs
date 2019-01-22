@@ -1,10 +1,5 @@
-﻿using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Net;
+﻿using System.Net;
 using System.Net.Mail;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace AdminCinemaApp
 {
@@ -17,8 +12,8 @@ namespace AdminCinemaApp
             mailMessage.Subject = subject;
             mailMessage.IsBodyHtml = true;
             mailMessage.Body = body;
-
             mailMessage.To.Add(email);
+
             var smtp = new SmtpClient
             {
                 Host = "smtp.gmail.com",
@@ -28,9 +23,7 @@ namespace AdminCinemaApp
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential("kinopz.wat@gmail.com", "projekt428")
             };
-
             smtp.SendMailAsync(mailMessage);
         }
-
     }
 }

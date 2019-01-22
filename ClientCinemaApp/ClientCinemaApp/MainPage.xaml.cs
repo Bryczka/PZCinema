@@ -14,7 +14,6 @@ namespace ClientCinemaApp
         {
             InitializeComponent();
             DependencyService.Get<IMessage>().LongAlert("Connecting...");
-            //Navigation.PushAsync(new RegisterPage());
         }
 
         private async void LoadFilms()
@@ -62,6 +61,5 @@ namespace ClientCinemaApp
         {
             Navigation.PushAsync(new BuyData());
         }
-
     }
 }

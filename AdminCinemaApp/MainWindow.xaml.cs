@@ -16,9 +16,6 @@ using ZXing;
 
 namespace AdminCinemaApp
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public static bool reload = true;
@@ -30,8 +27,6 @@ namespace AdminCinemaApp
         {
             InitializeComponent();
         }
-
-
             private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Loading_Data();
@@ -69,7 +64,6 @@ namespace AdminCinemaApp
 
                 if (result == MessageBoxResult.Yes)
                 {
-
                     foreach (Ticket ticket in SelectedFilmShow.Tickets)
                     {
                         unitOfWork.Ticket.Remove(unitOfWork.Ticket.Get(ticket.Id));
@@ -90,7 +84,6 @@ namespace AdminCinemaApp
             {
                 MessageBox.Show("Fail to delete film! Try select film again", "Error", MessageBoxButton.OK);
             }
-
         }
 
         private void AddFilm_Button(object sender, RoutedEventArgs e)
@@ -127,20 +120,6 @@ namespace AdminCinemaApp
             {
                 MessageBox.Show("Fail to delete film! You choose no film or try to delete film with active film shows", "Error", MessageBoxButton.OK);
             }
-        }
-
-        private void BuyTicket_Button(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                BuyTicket buyTicket = new BuyTicket((Ticket)ticketsDataGrid.SelectedItem);
-                buyTicket.ShowDialog();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Fail to buy ticket", "Error", MessageBoxButton.OK);
-            }
-            Loading_Data();
         }
 
         public void Loading_Data()
@@ -201,7 +180,6 @@ namespace AdminCinemaApp
                                 {
                                     Loading_Data();
                                 }));
-
                                 reload = true;
                             }
                         };
@@ -235,6 +213,11 @@ namespace AdminCinemaApp
                         unitOfWork.Ticket.Get(ticket.Id).IsFree = true;
                         unitOfWork.Ticket.Get(ticket.Id).ChooseTime = new DateTime(1900, 1, 1, 1, 1, 1);
                         unitOfWork.Complete();
+                    }else if (ticket.UserEmail != null)
+                    {
+                        unitOfWork.Ticket.Get(ticket.Id).IsBought = true;
+                        unitOfWork.Complete();
+                        Loading_Data();
                     }
 
                 }
@@ -294,7 +277,6 @@ namespace AdminCinemaApp
                 int id = SelectedRoom.Id;
                 UnitOfWork unitOfWork = new UnitOfWork(context);
                 Room SelectedRoomObj = unitOfWork.Room.Get(id);
-
                 var result = MessageBox.Show("Are you sure to delete room?", "Delete" + SelectedRoom.Name, MessageBoxButton.YesNo);
 
                 if (result == MessageBoxResult.Yes)
@@ -323,7 +305,6 @@ namespace AdminCinemaApp
         }
         private void DeleteEmployee_Click(object sender, RoutedEventArgs e)
         {
-            SymmetricAlgorithm sa = new TripleDESCryptoServiceProvider();
             try
             {
                 var context = new CinemaContext();

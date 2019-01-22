@@ -5,7 +5,6 @@ using System.IO;
 [assembly: Xamarin.Forms.Dependency(typeof(ClientCinemaApp.Droid.BarcodeService))]
 namespace ClientCinemaApp.Droid
 {
-
     public class BarcodeService : IBarcodeService
     {
         public Stream ConvertImageStream(string text, int width = 300, int height = 300)
@@ -17,7 +16,8 @@ namespace ClientCinemaApp.Droid
                 {
                     Width = width,
                     Height = height,
-                    Margin = 10
+                    Margin = 3
+
                 }
             };
 

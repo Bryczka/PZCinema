@@ -13,7 +13,6 @@ namespace AdminCinemaApp
         {
             InitializeComponent();
         }
-
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
             var context = new CinemaContext();
@@ -66,7 +65,6 @@ namespace AdminCinemaApp
                 NumberOfSeats.Text = (RowsCount * ColumnsCount).ToString();
             }
         }
-
         private void DelColumn_Click(object sender, RoutedEventArgs e)
         {
             if (ColumnsCount > 0)
@@ -76,6 +74,5 @@ namespace AdminCinemaApp
                 NumberOfSeats.Text = (RowsCount * ColumnsCount).ToString();
             }
         }
-
     }
 }

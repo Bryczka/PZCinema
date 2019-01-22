@@ -175,7 +175,7 @@ namespace ClientCinemaApp
 
         private void Save_Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new BuyData(ListSelectedTickets));
+            Navigation.PushAsync(new BuyData(ListSelectedTickets, FilmShowId));
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using ClientCinemaApp.Database_classes;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -17,11 +16,13 @@ namespace ClientCinemaApp
         List<Price> ListOfTypeTickets = new List<Price>();
         string buyerEmail;
         IpConfig ipConfig = new IpConfig();
-        public BuyTicketView(List<Ticket> SelectedTickets, string email)
+        int selectedFilmShowId;
+        public BuyTicketView(List<Ticket> SelectedTickets, string email, int FilmShowId)
         {
             InitializeComponent();
             ListSelectedTickets = SelectedTickets;
             buyerEmail = email;
+            selectedFilmShowId = FilmShowId;
             LoadTypeOfTicketAsync();
         }
 
@@ -87,7 +88,7 @@ namespace ClientCinemaApp
                 TabOfSelectedTickets.Add((Price)picker.SelectedItem);
                 picker.SelectedIndexChanged += Picker_SelectedIndexChanged;
                 BuyTicketMenuView.Children.Add(picker);
-            i++;
+                i++;
             }
 
             Button button = new Button()
@@ -102,31 +103,46 @@ namespace ClientCinemaApp
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TabOfSelectedTickets[(sender as Picker).TabIndex]=(Price)(sender as Picker).SelectedItem;
+            TabOfSelectedTickets[(sender as Picker).TabIndex] = (Price)(sender as Picker).SelectedItem;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            
             int i = 0;
             foreach (Ticket ticket in ListSelectedTickets)
             {
+
+
+
                 using (var client = new HttpClient())
                 {
                     try
                     {
                         client.BaseAddress = new Uri("http://" + ipConfig.GetIpAsync() + ":9095/api/");
+                        Ticket ticketCheck = new Ticket();
+                        string checkresponseString = "tickets/?id=" + ticket.Id + "&tick=ticket";
+                        HttpResponseMessage responseCheck = await client.GetAsync(checkresponseString);
+                        var result = await responseCheck.Content.ReadAsStringAsync();
+                        ticketCheck = JsonConvert.DeserializeObject<Ticket>(result);
 
-                        var a = TabOfSelectedTickets[i].ToString();
-                        ticket.Price = TabOfSelectedTickets[i].Cost;
-                        ticket.Type = TabOfSelectedTickets[i].TypeOfTicket;
-                        ticket.UserEmail = buyerEmail;
-                        ticket.IsBought = true;
-                        string responseString = "tickets/" + ticket.Id;
-                        var json = JsonConvert.SerializeObject(ticket);
-                        var content = new StringContent(json, Encoding.UTF8, "application/json");
-                        HttpResponseMessage response = await client.PutAsync(responseString, content);
-                        i++;
+                        if (ticketCheck.UserEmail != null)
+                        {
+                            DependencyService.Get<IMessage>().ShortAlert("Fail to buy tickets - they are sold");
+                            break;
+                        }
+                        else
+                        {
+                            var a = TabOfSelectedTickets[i].ToString();
+                            ticket.Price = TabOfSelectedTickets[i].Cost;
+                            ticket.Type = TabOfSelectedTickets[i].TypeOfTicket;
+                            ticket.UserEmail = buyerEmail;
+                            ticket.IsBought = true;
+                            string responseString = "tickets/" + ticket.Id;
+                            var json = JsonConvert.SerializeObject(ticket);
+                            var content = new StringContent(json, Encoding.UTF8, "application/json");
+                            HttpResponseMessage response = await client.PutAsync(responseString, content);
+                            i++;
+                        }
                     }
                     catch
                     {

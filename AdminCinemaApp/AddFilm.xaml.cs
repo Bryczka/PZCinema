@@ -6,9 +6,6 @@ using System.Windows;
 
 namespace AdminCinemaApp
 {
-    /// <summary>
-    /// Logika interakcji dla klasy AddFilm.xaml
-    /// </summary>
     public partial class AddFilm : Window
     {
         List<string> AgeCategory = new List<string>

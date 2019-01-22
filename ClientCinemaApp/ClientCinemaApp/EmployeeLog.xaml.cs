@@ -20,7 +20,6 @@ namespace ClientCinemaApp
 
         private async void LogInButton_Clicked(object sender, EventArgs e)
         {
-
             bool authorized = false;
             using (var client = new HttpClient())
             {
@@ -31,7 +30,6 @@ namespace ClientCinemaApp
                     HttpResponseMessage response = await client.GetAsync(responseString);
                     var result = await response.Content.ReadAsStringAsync();
                     authorized = Boolean.Parse(result);
-
                 }
 
                 catch
@@ -42,23 +40,20 @@ namespace ClientCinemaApp
             }
 
             if (authorized)
-            {
-                
+            {                
                 var scan = new ZXingScannerPage();
                 await Navigation.PushAsync(scan);
                 scan.OnScanResult += (result) =>
                 {
                     Device.BeginInvokeOnMainThread(async () =>
                     {
-                        //await Navigation.PopAsync();
+                        await Navigation.PopAsync();
                         DependencyService.Get<IMessage>().ShortAlert(result.Text);
                         ticketId = result.Text;
                         if(ticketId!="")
                         PushTicketToDelete();
-                        //await Navigation.PushAsync(new TicketToDeleteView(result.Text));
                     });
-                };
-                //
+                };   
             }
             else
             {

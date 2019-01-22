@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using ZXing.Net.Mobile.Forms;
 
 namespace ClientCinemaApp
 {
@@ -12,11 +11,9 @@ namespace ClientCinemaApp
         {
             InitializeComponent();
         }
-
         private async void LogToScan_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EmployeeLog());
         }
-
     }
 }

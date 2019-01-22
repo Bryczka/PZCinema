@@ -12,7 +12,6 @@ class Program
     {
         var context = new CinemaContext();
         UnitOfWork unitOfWork = new UnitOfWork(context);
-
     }
 }
 

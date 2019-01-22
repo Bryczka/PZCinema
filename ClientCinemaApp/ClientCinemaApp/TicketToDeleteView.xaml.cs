@@ -20,10 +20,7 @@ namespace ClientCinemaApp
             InitializeComponent();
             ticketId = id;
             GetTickets();
-
         }
-
-
 
         private async void GetTickets()
         {
@@ -75,7 +72,6 @@ namespace ClientCinemaApp
                     HttpResponseMessage response = await client.GetAsync(responseString);
                     var result = await response.Content.ReadAsStringAsync();
                     selectedTicketFilm = JsonConvert.DeserializeObject<Film>(result);
-
                 }
                 catch
                 {
@@ -87,15 +83,11 @@ namespace ClientCinemaApp
             RoomValue.Text = selectedTicketFilmShow.RoomName;
             SeatValue.Text = ticket.SeatNumber.ToString();
             TypeValue.Text = ticket.Type;
-
-
         }
-
-
 
         private async void DeleteTicket_Clicked(object sender, EventArgs e)
         {
-            var answer = await DisplayAlert("Do you want to delete?", "Confirm deleting ot this ticket", "Yes", "No");
+            var answer = await DisplayAlert("Do you want to delete?", "Confirm deleting this ticket", "Yes", "No");
             if (answer)
             {
                 using (var client = new HttpClient())
@@ -108,13 +100,50 @@ namespace ClientCinemaApp
                     }
                     catch
                     {
-                        DependencyService.Get<IMessage>().ShortAlert("Logging error...");
+                        DependencyService.Get<IMessage>().ShortAlert("Connection error...");
                     }
                 }
                 await Navigation.PopAsync();
             }
-            DependencyService.Get<IMessage>().ShortAlert("Deleting aborted");
+            else
+            {
+                DependencyService.Get<IMessage>().ShortAlert("Using aborted");
+                await Navigation.PopAsync();
+            }
+        }
 
+        private async void UseTicket_Clicked(object sender, EventArgs e)
+        {
+            if (ticket.IsUsed == true)
+            {
+                await DisplayAlert("Ticket used!", "You cannot use deleted or used ticket!", "OK");
+            }
+            else
+            {
+                var answer = await DisplayAlert("Do you want to use ticket?", "Confirm using ot this ticket", "Yes", "No");
+                if (answer)
+                {
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri("http://" + ipConfig.GetIpAsync() + ":9095/api/");
+                        try
+                        {
+                            string responseString = "tickets/?id=" + ticketId + "&tick=ticket";
+                            HttpResponseMessage response = await client.DeleteAsync(responseString);
+                        }
+                        catch
+                        {
+                            DependencyService.Get<IMessage>().ShortAlert("Connection error...");
+                        }
+                    }
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    DependencyService.Get<IMessage>().ShortAlert("Using aborted");
+                    await Navigation.PopAsync();
+                }
+            }
         }
     }
 }

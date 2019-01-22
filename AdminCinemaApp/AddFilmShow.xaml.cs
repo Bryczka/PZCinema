@@ -12,16 +12,12 @@ namespace AdminCinemaApp
         FilmShow addedFilmShow = new FilmShow();
         public AddFilmShow()
         {
-
             var context = new CinemaContext();
             UnitOfWork unitOfWork = new UnitOfWork(context);
-
             InitializeComponent();
-
             ObservableCollection<Film> listOfFilms = new ObservableCollection<Film>();
             ObservableCollection<Room> listOfRooms = new ObservableCollection<Room>();
 
-            
             foreach (Film film in unitOfWork.Film.GetAll())
             {
                 listOfFilms.Add(unitOfWork.Film.Get(film.Id));
@@ -55,7 +51,6 @@ namespace AdminCinemaApp
                 Film = unitOfWork.Film.Get(selectedFilm.Id),
                 FilmId = selectedFilm.Id,
                 RoomId = selectedRoom.Id
-                
             };
             addedFilmShow = filmShow;
             unitOfWork.FilmShow.Add(filmShow);
@@ -69,18 +64,14 @@ namespace AdminCinemaApp
                     SeatNumber = i,
                     IsFree = true,
                     FilmShowId = addedFilmShow.Id,
+                    IsUsed = false,
                     ChooseTime = new DateTime(1900, 1, 1, 1, 1, 1),
                     BuyTime = new DateTime(1900, 1, 1, 1, 1, 1),
                 };
                 unitOfWork.Ticket.Add(seat);
                 unitOfWork.Complete();
             }
-
             this.Close();
         }
-
-
-
-
     }
 }

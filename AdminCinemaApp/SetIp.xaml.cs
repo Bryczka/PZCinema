@@ -14,10 +14,8 @@ namespace AdminCinemaApp
             InitializeComponent();
             IpTetBox.Text = ipConfig.GetIp();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             if (IPAddress.TryParse(IpTetBox.Text, out IPAddress result))
             {
                 ipConfig.SetIp(IpTetBox.Text);
@@ -27,7 +25,6 @@ namespace AdminCinemaApp
             {
                 this.Close();
             }
-
         }
     }
 }

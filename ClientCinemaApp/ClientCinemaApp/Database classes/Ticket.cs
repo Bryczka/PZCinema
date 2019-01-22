@@ -1,5 +1,4 @@
-﻿using ClientCinemaApp.Database_classes;
-using System;
+﻿using System;
 
 namespace ClientCinemaApp
 {
@@ -16,7 +15,7 @@ namespace ClientCinemaApp
         public DateTime BuyTime { get; set; }
         public string UserEmail { get; set; }
         public int FilmShowId { get; set; }
-
+        public bool IsUsed { get; set; }
 
     }
 }

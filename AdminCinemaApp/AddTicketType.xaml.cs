@@ -5,16 +5,12 @@ using System.Windows;
 
 namespace AdminCinemaApp
 {
-    /// <summary>
-    /// Logika interakcji dla klasy AddTicketType.xaml
-    /// </summary>
     public partial class AddTicketType : Window
     {
         public AddTicketType()
         {
             InitializeComponent();
         }
-
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
             var context = new CinemaContext();

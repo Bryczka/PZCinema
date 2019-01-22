@@ -1,7 +1,5 @@
-﻿using ClientCinemaApp.Database_classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,11 +10,13 @@ namespace ClientCinemaApp
     {
         List<Ticket> ListSelectedTickets = new List<Ticket>();
         bool Buying = false;
-        public BuyData(List<Ticket> SelectedTickets)
+        int selectedFilmShowId;
+        public BuyData(List<Ticket> SelectedTickets, int FilmShowId)
         {
             InitializeComponent();
             ListSelectedTickets = SelectedTickets;
             Buying = true;
+            selectedFilmShowId = FilmShowId;
         }
 
         public BuyData()
@@ -27,11 +27,17 @@ namespace ClientCinemaApp
 
         private void ConfirmButton_Clicked(object sender, EventArgs e)
         {
-
             string email = EmailEntry.Text;
             if (Buying == true)
             {
-                Navigation.PushAsync(new BuyTicketView(ListSelectedTickets, email));
+                if (email == "")
+                {
+                    DependencyService.Get<IMessage>().ShortAlert("Enter email address!");
+                }
+                else
+                {
+                    Navigation.PushAsync(new BuyTicketView(ListSelectedTickets, email, selectedFilmShowId));
+                }
             }
             else
             {

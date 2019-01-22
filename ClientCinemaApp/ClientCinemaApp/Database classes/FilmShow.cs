@@ -12,7 +12,6 @@ namespace ClientCinemaApp
         public Film Film { get; set; }
         public IList<Ticket> Tickets { get; set; }
         public int FilmId { get; set; }
-
     }
 }
 

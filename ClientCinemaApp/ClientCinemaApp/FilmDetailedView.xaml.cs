@@ -17,7 +17,6 @@ namespace ClientCinemaApp
         int selectedFilmShowId;
         public FilmDetailedView(Film film)
         {
-
             InitializeComponent();
             selectedFilm = film;
             DetailedTitle.Text = film.Title;
@@ -68,7 +67,6 @@ namespace ClientCinemaApp
             selectedFilmShowId = (sender as Button).TabIndex;
             FilmShow selectedFilmShow = ListFilmShow.Find(c => c.Id == (sender as Button).TabIndex);
             Navigation.PushAsync(new TicketView(selectedFilm, selectedFilmShow, selectedFilmShowId));
-
         }
     }
 }

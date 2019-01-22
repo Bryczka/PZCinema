@@ -54,8 +54,6 @@ C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.And
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\bin\Debug\System.Web.Services.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\bin\Debug\Mono.Security.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\bin\Debug\ClientCinemaApp.dll.mdb
-C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\bin\Debug\FormsViewGroup.dll.mdb
-C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\ClientCinemaApp.Android.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\Mono.Android.pdb
@@ -79,11 +77,7 @@ C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.And
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\System.Web.Services.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\Mono.Security.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\ClientCinemaApp.dll.mdb
-C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\FormsViewGroup.dll.mdb
-C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\ClientCinemaApp.dll.mdb
-C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\FormsViewGroup.dll.mdb
-C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\ClientCinemaApp.Android.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Mono.Android.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Mono.Security.pdb
@@ -105,6 +99,10 @@ C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.And
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\System.Xml.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\bin\Debug\FormsViewGroup.pdb
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\bin\Debug\Xamarin.Forms.Platform.Android.pdb
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\FormsViewGroup.pdb
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\Xamarin.Forms.Platform.Android.pdb
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\FormsViewGroup.pdb
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\ClientCinemaApp.dll.mdb
-C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\FormsViewGroup.dll.mdb
-C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\Xamarin.Forms.Platform.Android.dll.mdb

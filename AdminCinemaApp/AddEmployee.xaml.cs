@@ -6,9 +6,6 @@ using System.Windows;
 
 namespace AdminCinemaApp
 {
-    /// <summary>
-    /// Logika interakcji dla klasy AddEmployee.xaml
-    /// </summary>
     public partial class AddEmployee : Window
     {
         SymmetricAlgorithm sa = new TripleDESCryptoServiceProvider();
@@ -36,21 +33,6 @@ namespace AdminCinemaApp
             }
         }
 
-    /*    private string Decrypt(SymmetricAlgorithm symmetricAlgorithm, byte[] msg)
-        {
-            ICryptoTransform decryptor = symmetricAlgorithm.CreateDecryptor(symmetricAlgorithm.Key, symmetricAlgorithm.IV);
-            using (var msDecrypt = new MemoryStream(msg))
-            {
-                using (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
-                {
-                    using (var srDecrypt = new StreamReader(csDecrypt))
-                    {
-                        return srDecrypt.ReadToEnd();
-                    }
-                }
-            }
-        }*/
-
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
             var context = new CinemaContext();
@@ -65,7 +47,6 @@ namespace AdminCinemaApp
                         Surname = SurnameOfEmployee.Text,
                         Password = Encrypt(sa, PasswordOfEmployee.Text),
                         Email = EmailOfEmployee.Text,
-
                     };
 
                     UnitOfWork unitOfWork = new UnitOfWork(context);
