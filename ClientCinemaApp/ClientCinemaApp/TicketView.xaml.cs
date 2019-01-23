@@ -25,7 +25,7 @@ namespace ClientCinemaApp
             TicketViewTitle.Text = "Title: " + selectedFilm.Title;
             TicketViewDescription.Text = "Description: " + selectedFilm.Description;
             TicketViewDuration.Text = "Duration: " + Environment.NewLine + selectedFilm.Duration.ToString();
-            TicketViewRoomAndTime.Text = selectedFilmShow.Time.Substring(0, selectedFilmShow.Time.Length - 3) + Environment.NewLine + selectedFilmShow.RoomName;
+            TicketViewRoomAndTime.Text = selectedFilmShow.Time + Environment.NewLine + Environment.NewLine + selectedFilmShow.RoomName;
             filmShow = selectedFilmShow;
             FilmShowId = selectedFilmShowId;
             filmSelected = selectedFilm;

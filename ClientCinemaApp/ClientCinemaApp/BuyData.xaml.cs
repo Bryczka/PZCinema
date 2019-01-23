@@ -27,7 +27,7 @@ namespace ClientCinemaApp
 
         private void ConfirmButton_Clicked(object sender, EventArgs e)
         {
-            string email = EmailEntry.Text;
+            string email = EmailEntry.Text.ToLower();
             if (Buying == true)
             {
                 if (email == "")

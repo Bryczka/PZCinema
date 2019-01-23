@@ -17,7 +17,7 @@ namespace ClientCinemaApp {
     public partial class FilmDetailedView : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private new global::Xamarin.Forms.StackLayout Layout;
+        private global::Xamarin.Forms.StackLayout Layout;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label DetailedTitle;
