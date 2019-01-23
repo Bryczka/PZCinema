@@ -78,11 +78,19 @@ namespace ClientCinemaApp
                     DependencyService.Get<IMessage>().ShortAlert("Logging error...");
                 }
             }
-            TitleValue.Text = selectedTicketFilm.Title;
-            TimeValue.Text = selectedTicketFilmShow.Time;
-            RoomValue.Text = selectedTicketFilmShow.RoomName;
-            SeatValue.Text = ticket.SeatNumber.ToString();
-            TypeValue.Text = ticket.Type;
+            try
+            {
+                TitleValue.Text = selectedTicketFilm.Title;
+                TimeValue.Text = selectedTicketFilmShow.Time;
+                RoomValue.Text = selectedTicketFilmShow.RoomName;
+                SeatValue.Text = ticket.SeatNumber.ToString();
+                TypeValue.Text = ticket.Type;
+            }
+            catch
+            {
+                DependencyService.Get<IMessage>().ShortAlert("Wrong QR code, scan again");
+                await Navigation.PopAsync();
+            }
         }
 
         private async void DeleteTicket_Clicked(object sender, EventArgs e)
