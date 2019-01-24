@@ -22,7 +22,7 @@
           "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
         }
       },
-      "Xamarin.Forms/3.4.0.1009999": {
+      "Xamarin.Forms/3.4.0.1029999": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -178,7 +178,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.4.0.1009999",
+          "Xamarin.Forms": "3.4.0.1029999",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1"
         },
@@ -211,7 +211,7 @@
           "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
         }
       },
-      "Xamarin.Forms/3.4.0.1009999": {
+      "Xamarin.Forms/3.4.0.1029999": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -367,7 +367,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.4.0.1009999",
+          "Xamarin.Forms": "3.4.0.1029999",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1"
         },
@@ -400,7 +400,7 @@
           "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
         }
       },
-      "Xamarin.Forms/3.4.0.1009999": {
+      "Xamarin.Forms/3.4.0.1029999": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -556,7 +556,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.4.0.1009999",
+          "Xamarin.Forms": "3.4.0.1029999",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1"
         },
@@ -589,7 +589,7 @@
           "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
         }
       },
-      "Xamarin.Forms/3.4.0.1009999": {
+      "Xamarin.Forms/3.4.0.1029999": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -745,7 +745,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.4.0.1009999",
+          "Xamarin.Forms": "3.4.0.1029999",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1"
         },
@@ -845,10 +845,10 @@
         "pclstorage.nuspec"
       ]
     },
-    "Xamarin.Forms/3.4.0.1009999": {
-      "sha512": "pgqRxgD23FJHG2B7zOxf4Fm+KYgoWctUJp8hNtdZgAt43RIiK3VgM11wJf3S0SkMIsXQCUL0yYQmR8gR/njltA==",
+    "Xamarin.Forms/3.4.0.1029999": {
+      "sha512": "qupCyyDo1x3c0BfroaTOhkc6wjeBXQnRLkUhvlgfVmZAcBjSEOaPRsa5/HWShtnkgqnySrkwzYEu3N0dG0pn7Q==",
       "type": "package",
-      "path": "xamarin.forms/3.4.0.1009999",
+      "path": "xamarin.forms/3.4.0.1029999",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -989,7 +989,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.4.0.1009999.nupkg.sha512",
+        "xamarin.forms.3.4.0.1029999.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1047,7 +1047,7 @@
     "Xamarin.iOS,Version=v1.0": [
       "ClientCinemaApp >= 1.0.0",
       "PCLStorage >= 1.0.2",
-      "Xamarin.Forms >= 3.4.0.1009999",
+      "Xamarin.Forms >= 3.4.0.1029999",
       "ZXing.Net.Mobile >= 2.4.1",
       "ZXing.Net.Mobile.Forms >= 2.4.1"
     ]
@@ -1097,7 +1097,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.4.0.1009999, )"
+            "version": "[3.4.0.1029999, )"
           },
           "ZXing.Net.Mobile": {
             "target": "Package",

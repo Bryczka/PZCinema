@@ -27,20 +27,22 @@ namespace ClientCinemaApp
 
         private void ConfirmButton_Clicked(object sender, EventArgs e)
         {
-            string email = EmailEntry.Text.ToLower();
+            string email = EmailEntry.Text;
             if (Buying == true)
             {
-                if (email == "")
+                if (email.Equals("") || email.Equals(null) || !email.Contains("@"))
                 {
-                    DependencyService.Get<IMessage>().ShortAlert("Enter email address!");
+                    DependencyService.Get<IMessage>().ShortAlert("Enter correct email address!");
                 }
                 else
                 {
+                   
                     Navigation.PushAsync(new BuyTicketView(ListSelectedTickets, email, selectedFilmShowId));
                 }
             }
             else
             {
+              
                 Navigation.PushAsync(new AllTicketsPage(email));
             }
         }

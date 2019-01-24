@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "26512c98ffaa40d9912ea5bda770027d9be8e447"
+    "signature": "fadc8c6cdfd9606857804cb78c6a840f2b5dd964"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,7 +11,7 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.1",
-          "Xamarin.Forms": "3.4.0.1009999",
+          "Xamarin.Forms": "3.4.0.1029999",
           "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1",
           "Mono.Android": "0.0.0.0",
@@ -38,7 +38,7 @@
           }
         }
       },
-      "Xamarin.Forms/3.4.0.1009999": {
+      "Xamarin.Forms/3.4.0.1029999": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -72,7 +72,7 @@
       },
       "ZXing.Net.Mobile.Forms/2.4.1": {
         "dependencies": {
-          "Xamarin.Forms": "3.4.0.1009999",
+          "Xamarin.Forms": "3.4.0.1029999",
           "ZXing.Net.Mobile": "2.4.1"
         },
         "runtime": {
@@ -239,12 +239,12 @@
       "path": "newtonsoft.json/12.0.1",
       "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
     },
-    "Xamarin.Forms/3.4.0.1009999": {
+    "Xamarin.Forms/3.4.0.1029999": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pgqRxgD23FJHG2B7zOxf4Fm+KYgoWctUJp8hNtdZgAt43RIiK3VgM11wJf3S0SkMIsXQCUL0yYQmR8gR/njltA==",
-      "path": "xamarin.forms/3.4.0.1009999",
-      "hashPath": "xamarin.forms.3.4.0.1009999.nupkg.sha512"
+      "sha512": "sha512-qupCyyDo1x3c0BfroaTOhkc6wjeBXQnRLkUhvlgfVmZAcBjSEOaPRsa5/HWShtnkgqnySrkwzYEu3N0dG0pn7Q==",
+      "path": "xamarin.forms/3.4.0.1029999",
+      "hashPath": "xamarin.forms.3.4.0.1029999.nupkg.sha512"
     },
     "ZXing.Net.Mobile/2.4.1": {
       "type": "package",

@@ -5,7 +5,7 @@
     <ContentPage.Content VerticalOptions="Center" HorizontalOptions="Center">
         <StackLayout BackgroundColor="DimGray" >
             <Label Text="Put your e-mail address here: " FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin=" 40,5,10,5"/>
-            <Entry x:Name="EmailEntry" Margin="10,10,10,10" HorizontalTextAlignment="Center" FontSize="30"  TextColor="White"/>
+            <Entry x:Name="EmailEntry" Text="" Margin="10,10,10,10" HorizontalTextAlignment="Center" FontSize="30"  TextColor="White"/>
             <Button x:Name="ConfirmButton" Text="Done" Clicked="ConfirmButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
