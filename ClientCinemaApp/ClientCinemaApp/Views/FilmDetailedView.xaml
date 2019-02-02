@@ -7,11 +7,11 @@
             <StackLayout x:Name="Layout" BackgroundColor="DimGray" >
                 <Label x:Name="DetailedTitle" FontSize="40" TextColor="White" Margin="3,5,3,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                 <Image x:Name="FilmPoster" Margin="5,5,5,5" HeightRequest="400" WidthRequest="400" MinimumHeightRequest="400" MinimumWidthRequest="400"  />
+                <Label x:Name="DetailedDescription" FontSize="20" TextColor="White" Margin="3,10,3,20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Italic"/>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label x:Name="DetailedAgeLimit" FontSize="20" TextColor="White" Margin="3,0,3,0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Label x:Name="DetailedDuration" FontSize="20" TextColor="White" Margin="3,0,3,0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="DetailedAgeLimit" FontSize="20" TextColor="White" Margin="3,0,3,0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                    <Label x:Name="DetailedDuration" FontSize="20" TextColor="White" Margin="3,0,3,0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
                 </StackLayout>
-                <Label x:Name="DetailedDescription" FontSize="20" TextColor="White" Margin="3,0,3,5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                 <Label x:Name="Filmshows"></Label>
             </StackLayout>
         </ScrollView>

@@ -2,10 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"         
              x:Class="ClientCinemaApp.BuyTicketView" Title="Confirm transaction">
-    <ContentPage.Content >
+    <ContentPage.Content>
         <ScrollView>
-            <StackLayout x:Name="BuyTicketMenuView" BackgroundColor="DimGray">
-                <Label x:Name="BuyTicket"  Text="Select type of ticket and complete buying process" FontSize="25" TextColor="White" Margin="3,0,3,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            <StackLayout x:Name="BuyTicketMenuView" BackgroundColor="DimGray" Padding="5">
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

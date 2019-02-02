@@ -40,7 +40,7 @@ namespace ClientCinemaApp
                         Margin = new Thickness(10, 10, 10, 10),
                         WidthRequest = 30,
                         HeightRequest = 80,
-                        Text = "Name of room: " + filmshow.RoomName + "  Time: " + filmshow.Time,
+                        Text = "Name of room: " + filmshow.RoomName + Environment.NewLine +"Time: " + filmshow.Time,
                         FontSize = 15,
                         TabIndex = filmshow.Id,
                         BackgroundColor = Color.WhiteSmoke,

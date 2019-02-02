@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientCinemaApp.EmployeeLog">
+             x:Class="ClientCinemaApp.EmployeeLog" BackgroundColor="DimGray">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="DimGray">
-            <Label Text="This option is available for employees only "  FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin=" 40,5,10,5"/>
+        <StackLayout BackgroundColor="DimGray" VerticalOptions="StartAndExpand" Margin="0,100,0,0">
             <Label Text="Employee ID: " FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin=" 40,5,10,5"/>
             <Entry x:Name="IdEntry" Margin="10,10,10,10" FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" Placeholder="ID" />
             <Label Text="Employee password: " FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin=" 40,5,10,5"/>

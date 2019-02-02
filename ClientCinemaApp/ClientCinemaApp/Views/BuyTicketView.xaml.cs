@@ -40,17 +40,12 @@ namespace ClientCinemaApp
             int i = 0;
             foreach (Ticket ticket in ListSelectedTickets)
             {
-                Label[] labels = new Label[3];
-
+                Label[] labels = new Label[2];
                 labels[0] = new Label
-                {
-                    Text = "Choose type of ticket number"
-                };
-                labels[1] = new Label
                 {
                     Text = "Seat number: " + ticket.SeatNumber
                 };
-                labels[2] = new Label
+                labels[1] = new Label
                 {
                     Text = "Type of ticket: "
                 };
@@ -75,6 +70,9 @@ namespace ClientCinemaApp
                 };
                 TabOfSelectedTickets.Add((Price)picker.SelectedItem);
                 picker.SelectedIndexChanged += Picker_SelectedIndexChanged;
+                picker.FontSize = 30;
+                picker.FontAttributes = FontAttributes.Bold;
+                picker.Margin = new Thickness(5, 10, 5, 20);
                 BuyTicketMenuView.Children.Add(picker);
                 i++;
             }

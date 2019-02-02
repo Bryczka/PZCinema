@@ -13,7 +13,7 @@ namespace AdminCinemaApp
     {
         BitmapImage image = new BitmapImage();
         List<string> AgeCategory = new List<string>
-            {"N/A", "7", "12", "15", "18"};
+            {"0", "7", "12", "15", "18"};
         public AddFilm()
         {
             InitializeComponent();

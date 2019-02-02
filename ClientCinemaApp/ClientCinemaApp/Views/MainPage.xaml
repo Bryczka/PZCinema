@@ -9,13 +9,20 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="filmsListView" BackgroundColor="DimGray">
+            <ListView x:Name="filmsListView" BackgroundColor="Gray" RowHeight="400" Style="MyTheme">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell Tapped="FilmItemText_Tapped" Height="50">
-                            <Grid>
-                                <Label x:Name="FilmItemText" TextColor="#FFFF02" Text="{Binding Title}"/>
-                            </Grid>
+                        <ViewCell  Tapped="FilmItemText_Tapped">
+                            <StackLayout Margin="10,10,10,10" BackgroundColor="DimGray">
+                                <Label x:Name="FilmItemText" TextColor="White" Text="{Binding Title}" FontSize="Medium" FontAttributes="Bold" Margin="5,5,5,25" HorizontalTextAlignment="Center"/>
+                                <Label x:Name="FilmDescription" TextColor="White" Text="{Binding Description}" FontSize="Default" FontAttributes="Italic" HorizontalTextAlignment="Center"/>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="10,10,10,30"> 
+                                    <Label x:Name="FilmAge" TextColor="White" Text="Age limit: " FontSize="Default" HorizontalTextAlignment="Center"/>
+                                    <Label x:Name="FilmAgeLimit" TextColor="White" Text="{Binding Age_Limit}" FontSize="Default" HorizontalTextAlignment="Center"/>
+                                    <Label x:Name="FilmDuration" TextColor="White" Text="Duration: " FontSize="Default" HorizontalTextAlignment="Center"/>
+                                    <Label x:Name="FilmDurationValue" TextColor="White" Text="{Binding Duration}" FontSize="Default" HorizontalTextAlignment="Center"/>
+                                </StackLayout>
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

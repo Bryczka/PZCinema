@@ -19,7 +19,7 @@ namespace ClientCinemaApp
         public TicketView(Film selectedFilm, FilmShow selectedFilmShow, int selectedFilmShowId)
         {
             InitializeComponent();
-            TicketViewTitle.Text = "Title: " + selectedFilm.Title;
+            TicketViewTitle.Text = selectedFilm.Title;
             filmShow = selectedFilmShow;
             FilmShowId = selectedFilmShowId;
             filmSelected = selectedFilm;

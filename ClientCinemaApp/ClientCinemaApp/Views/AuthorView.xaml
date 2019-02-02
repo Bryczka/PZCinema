@@ -1,17 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientCinemaApp.AuthorView" Title="About author">
+             x:Class="ClientCinemaApp.AuthorView" Title="About author" BackgroundColor="DimGray">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Log as employee" Clicked="LogToScan_Clicked"/>
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
-        <StackLayout BackgroundColor="DimGray">
-            <Label Text="Author:" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10"/>
-            <Label Text="Michał Bryła" FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10"/>
-            <Label Text="MILITARY UNIVERSITY OF TECHNOLOGY" FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10"/>
-            <Label Text="Project for events programing" FontSize="25" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10"/>
-            <Label Text="Year of release 2019" FontSize="25" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10"/>
+    <ContentPage.Content >
+        <StackLayout BackgroundColor="DimGray" VerticalOptions="StartAndExpand" Margin="0,100,0,0">
+            <Label Text="Author:" FontSize="35" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10" FontAttributes="Bold"/>
+            <Label Text="Michał Bryła" FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10" FontAttributes="Italic"/>
+            <Label Text="MILITARY UNIVERSITY OF TECHNOLOGY" FontSize="30"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="5,5,5,10" FontAttributes="Bold"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
