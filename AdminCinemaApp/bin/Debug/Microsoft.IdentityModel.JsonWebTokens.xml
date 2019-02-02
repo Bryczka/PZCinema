@@ -246,11 +246,23 @@
             </summary>
             <remarks>If the key has no corresponding value, returns null. </remarks>   
         </member>
+        <member name="M:Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.TryGetPayloadValue``1(System.String,``0@)">
+            <summary>
+            Tries to get the 'value' corresponding to the provided key from the JWT payload { key, 'value' }.
+            </summary>
+            <remarks>If the key has no corresponding value, returns false. Otherwise returns true. </remarks>   
+        </member>
         <member name="M:Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.GetHeaderValue``1(System.String)">
             <summary>
             Gets the 'value' corresponding to the provided key from the JWT header { key, 'value' }.
             </summary>
             <remarks>If the key has no corresponding value, returns null. </remarks>   
+        </member>
+        <member name="M:Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.TryGetHeaderValue``1(System.String,``0@)">
+            <summary>
+            Tries to get the value corresponding to the provided key from the JWT header { key, 'value' }.
+            </summary>
+            <remarks>If the key has no corresponding value, returns false. Otherwise returns true. </remarks>   
         </member>
         <member name="T:Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler">
             <summary>
@@ -295,6 +307,13 @@
             <param name="signingCredentials">Defines the security key and algorithm that will be used to sign the JWS.</param>
             <returns>A JWS in Compact Serialization Format.</returns>
         </member>
+        <member name="M:Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.CreateToken(Microsoft.IdentityModel.Tokens.SecurityTokenDescriptor)">
+            <summary>
+            Creates a JWS(Json Web Signature).
+            </summary>
+            <param name="tokenDescriptor">A <see cref="T:Microsoft.IdentityModel.Tokens.SecurityTokenDescriptor"/> that contains details of contents of the token.</param>
+            <returns>A JWS in Compact Serialization Format.</returns>
+        </member>
         <member name="M:Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.CreateToken(System.String,Microsoft.IdentityModel.Tokens.SigningCredentials,Microsoft.IdentityModel.Tokens.EncryptingCredentials)">
             <summary>
             Creates a JWE (Json Web Encryption).
@@ -324,6 +343,14 @@
             <exception cref="T:System.ArgumentNullException">if 'algorithm' is null.</exception>
             <exception cref="T:System.NotSupportedException">if the compression algorithm is not supported.</exception>
             <returns>Compressed JWT token bytes.</returns>
+        </member>
+        <member name="M:Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.CreateClaimsIdentity(Microsoft.IdentityModel.JsonWebTokens.JsonWebToken,Microsoft.IdentityModel.Tokens.TokenValidationParameters)">
+            <summary>
+            Creates a <see cref="T:System.Security.Claims.ClaimsIdentity"/> from a <see cref="T:Microsoft.IdentityModel.JsonWebTokens.JsonWebToken"/>.
+            </summary>
+            <param name="jwtToken">The <see cref="T:Microsoft.IdentityModel.JsonWebTokens.JsonWebToken"/> to use as a <see cref="T:System.Security.Claims.Claim"/> source.</param>
+            <param name="validationParameters"> Contains parameters for validating the token.</param>
+            <returns>A <see cref="T:System.Security.Claims.ClaimsIdentity"/> containing the <see cref="P:Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.Claims"/>.</returns>
         </member>
         <member name="M:Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.DecompressToken(System.Byte[],System.String)">
             <summary>
@@ -696,6 +723,16 @@
             <returns>The bse64urlendcoded signature over the bytes obtained from UTF8Encoding.GetBytes( 'input' ).</returns>
             <exception cref="T:System.ArgumentNullException">'input' or 'signingCredentials' is null.</exception>
         </member>
+        <member name="M:Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.FindKeyMatch(System.String,System.String,Microsoft.IdentityModel.Tokens.SecurityKey,System.Collections.Generic.IEnumerable{Microsoft.IdentityModel.Tokens.SecurityKey})">
+            <summary>
+            Has extra code for X509SecurityKey keys where the kid or x5t match in a case insensitive manner.
+            </summary>
+            <param name="kid"></param>
+            <param name="x5t"></param>
+            <param name="securityKey"></param>
+            <param name="keys"></param>
+            <returns>a key if found, null otherwise.</returns>
+        </member>
         <member name="M:Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.GenerateKeyBytes(System.Int32)">
             <summary>
             Generates key bytes.
@@ -724,12 +761,42 @@
         </member>
         <member name="T:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult">
             <summary>
-            A class which contains the result of a token validation operation.
+            Contains artifacts obtained when a SecurityToken is validated.
+            </summary>
+        </member>
+        <member name="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.ClaimsIdentity">
+            <summary>
+            The <see cref="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.ClaimsIdentity"/> created from the validated security token.
+            </summary>
+        </member>
+        <member name="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.Exception">
+            <summary>
+            Gets or sets the <see cref="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.Exception"/> that occurred during validation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.Issuer">
+            <summary>
+            Gets or sets the issuer that was found in the token.
+            </summary>
+        </member>
+        <member name="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.IsValid">
+            <summary>
+            True if the token was successfully validated, false otherwise.
             </summary>
         </member>
         <member name="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.SecurityToken">
             <summary>
-            The validated security token.
+            Gets or sets the <see cref="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.SecurityToken"/> that was validated.
+            </summary>
+        </member>
+        <member name="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.TokenContext">
+            <summary>
+            Gets or sets the <see cref="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.TokenContext"/> that contains call information.
+            </summary>
+        </member>
+        <member name="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.TokenType">
+            <summary>
+            Gets or sets the token type of the <see cref="P:Microsoft.IdentityModel.JsonWebTokens.TokenValidationResult.SecurityToken"/> that was validated.
             </summary>
         </member>
     </members>

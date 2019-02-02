@@ -105,4 +105,6 @@ C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.And
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp\bin\Debug\netstandard2.0\ClientCinemaApp.dll
+C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\bin\Debug\ClientCinemaApp.dll.mdb
 C:\Users\Michał\source\repos\CInemaDatabase\ClientCinemaApp\ClientCinemaApp.Android\obj\Debug\81\linksrc\ClientCinemaApp.dll.mdb

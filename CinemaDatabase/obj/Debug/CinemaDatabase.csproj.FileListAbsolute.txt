@@ -32,3 +32,4 @@ C:\Users\Michał\source\repos\CInemaDatabase\CinemaDatabase\obj\Debug\CinemaData
 C:\Users\Michał\source\repos\CInemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.Migrations.a.resources
 C:\Users\Michał\source\repos\CInemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.Migrations.END.resources
 C:\Users\Michał\source\repos\CInemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.Migrations.IsUsed.resources
+C:\Users\Michał\source\repos\CInemaDatabase\CinemaDatabase\obj\Debug\CinemaDatabase.Migrations.Image.resources

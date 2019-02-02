@@ -5,20 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminCinemaApp"
         mc:Ignorable="d"
-        Title="AddFilm" Height="400" Width="300" x:Name="AddFilmWindow" WindowStartupLocation="CenterScreen">
+        Title="AddFilm" Height="458.4" Width="440" x:Name="AddFilmWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="5,0,0,0">
+            <TextBlock TextWrapping="Wrap" Text="Title:" FontSize="18" FontWeight="Bold" Margin="0,15,0,5" TextAlignment="Center"/>
+            <TextBox x:Name="Title" Height="23" TextWrapping="Wrap" Text="" FontSize="15"/>
+            <TextBlock TextWrapping="Wrap" Text="Age limit:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
+            <ComboBox x:Name="Age_limit" Height="23" Text="" FontSize="15" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBlock TextWrapping="Wrap" Text="Duration:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
+            <TextBox x:Name="Duration" Height="23" TextWrapping="Wrap" Text="" FontSize="15"/>
+            <TextBlock TextWrapping="Wrap" Text="Description:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
+            <TextBox x:Name="Description" Height="136" TextWrapping="Wrap" Text="" FontSize="15" Margin="0,0,-0.2,0"/>
 
-    <StackPanel>
-        <TextBlock TextWrapping="Wrap" Text="Title:" FontSize="18" FontWeight="Bold" Margin="0,15,0,5" TextAlignment="Center"/>
-        <TextBox x:Name="Title" Height="23" TextWrapping="Wrap" Text="" FontSize="15"/>
-        <TextBlock TextWrapping="Wrap" Text="Age limit:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
-        <ComboBox x:Name="Age_limit" Height="23" Text="" FontSize="15" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <TextBlock TextWrapping="Wrap" Text="Duration:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
-        <TextBox x:Name="Duration" Height="23" TextWrapping="Wrap" Text="" FontSize="15"/>
-        <TextBlock TextWrapping="Wrap" Text="Description:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
-        <TextBox x:Name="Description" Height="50" TextWrapping="Wrap" Text="" FontSize="15"/>
-        <Button x:Name="Save_Button" Content="Save" Margin="0,35,0,0" Height="36" FontSize="18" FontWeight="Bold" Click="Save_Button_Click"/>
-
-
-
-    </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBlock TextWrapping="Wrap" Text="Selected poster:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
+            <Image x:Name="FilmPosterImage" HorizontalAlignment="Left" Height="280" Margin="10,5,0,0" VerticalAlignment="Top" Width="197"/>
+            <Button Content="Browse for image" Margin="10,10,10,0" Height="32" Click="Browse_Button_Click"/>
+        </StackPanel>
+        <Button x:Name="Save_Button" Content="Save" Margin="0,373,0,10" Height="36" FontSize="18" FontWeight="Bold" Click="Save_Button_Click" Grid.ColumnSpan="2"/>
+    </Grid>
 </Window>

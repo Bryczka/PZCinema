@@ -41,34 +41,34 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AllTicketsPage.xaml">
+    <EmbeddedResource Update="Views\AllTicketsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AuthorView.xaml">
+    <EmbeddedResource Update="Views\AuthorView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BuyData.xaml">
+    <EmbeddedResource Update="Views\BuyData.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BuyTicketView.xaml">
+    <EmbeddedResource Update="Views\BuyTicketView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ChangeIpView.xaml">
+    <EmbeddedResource Update="Views\ChangeIpView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="EmployeeLog.xaml">
+    <EmbeddedResource Update="Views\EmployeeLog.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="FilmDetailedView.xaml">
+    <EmbeddedResource Update="Views\FilmDetailedView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterDetailPage1Detail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TicketToDeleteView.xaml">
+    <EmbeddedResource Update="Views\TicketToDeleteView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TicketView.xaml">
+    <EmbeddedResource Update="Views\TicketView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

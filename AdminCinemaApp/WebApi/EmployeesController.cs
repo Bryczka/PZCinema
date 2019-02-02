@@ -1,5 +1,7 @@
 ﻿using CinemaDatabase;
 using CinemaDatabase.Persistence;
+using Newtonsoft.Json;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -9,9 +11,8 @@ namespace AdminCinemaApp
 
     public class EmployeesController : ApiController
     {
-        Crypto crypto = new Crypto();
 
-        public bool Get(int id, string password)
+        public bool Post(int id, [FromBody]string password)
         {
 
             var context = new CinemaContext();
@@ -19,7 +20,7 @@ namespace AdminCinemaApp
 
             Employee employee = new Employee();
             employee = unitOfWork.Employee.Get(id);
-            string dbpass = crypto.Decrypt(crypto.sa, employee.Password);
+            string dbpass = BitConverter.ToString(employee.Password);
             if (dbpass.Equals(password))
             {
                 return true;
@@ -28,7 +29,6 @@ namespace AdminCinemaApp
             {
                 return false;
             }
-
         }
 
         public HttpResponseMessage Get(int id)

@@ -1,51 +1,33 @@
 ﻿using CinemaDatabase;
 using CinemaDatabase.Persistence;
-using System.IO;
 using System.Security.Cryptography;
+using System.Text;
 using System.Windows;
 
 namespace AdminCinemaApp
 {
     public partial class AddEmployee : Window
     {
-        SymmetricAlgorithm sa = new TripleDESCryptoServiceProvider();
-        byte[] Key = { 0x21, 0x12, 0x43, 0x34, 0x65, 0x56, 0x87, 0x78, 0x09, 0x19, 0x51, 0x42, 0x33, 0x24, 0x15, 0x06 };
-        byte[] IV = { 0x91, 0x82, 0x73, 0x64, 0x55, 0x46, 0x37, 0x28, 0x19, 0x19, 0x91, 0x65, 0x33, 0x24, 0x43, 0x24 };
         public AddEmployee()
         {
             InitializeComponent();
         }
 
-        private byte[] Encrypt(SymmetricAlgorithm symmetricAlgorithm, string text)
-        {
-            ICryptoTransform encryptor = symmetricAlgorithm.CreateEncryptor(Key, IV);
-
-            using (var msEncrypt = new MemoryStream())
-            {
-                using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
-                {
-                    using (var swEncrypt = new StreamWriter(csEncrypt))
-                    {
-                        swEncrypt.Write(text);
-                    }
-                    return msEncrypt.ToArray();
-                }
-            }
-        }
-
+        
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
             var context = new CinemaContext();
 
-            if (PasswordOfEmployee.Text == ConfirmPasswordOfEmployee.Text)
+            if (PasswordOfEmployee.Password == ConfirmPasswordOfEmployee.Password)
             {
                 try
                 {
+
                     Employee employee = new Employee
                     {
                         Name = NameOfEmployee.Text,
                         Surname = SurnameOfEmployee.Text,
-                        Password = Encrypt(sa, PasswordOfEmployee.Text),
+                        Password = Crypto.Hash(PasswordOfEmployee.Password),
                         Email = EmailOfEmployee.Text,
                     };
 

@@ -149,6 +149,10 @@
     <Compile Include="Migrations\201901211519390_IsUsed.Designer.cs">
       <DependentUpon>201901211519390_IsUsed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901301323231_Image.cs" />
+    <Compile Include="Migrations\201901301323231_Image.Designer.cs">
+      <DependentUpon>201901301323231_Image.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\CinemaContext.cs" />
     <Compile Include="Persistence\FilmRepository.cs" />
@@ -230,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901211519390_IsUsed.resx">
       <DependentUpon>201901211519390_IsUsed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901301323231_Image.resx">
+      <DependentUpon>201901301323231_Image.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

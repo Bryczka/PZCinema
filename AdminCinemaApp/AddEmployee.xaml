@@ -13,9 +13,9 @@
             <TextBlock TextWrapping="Wrap" Text="Surname:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
             <TextBox x:Name="SurnameOfEmployee" Height="23" TextWrapping="Wrap" Text="" FontSize="15"/>
             <TextBlock TextWrapping="Wrap" Text="Password:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
-            <TextBox x:Name="PasswordOfEmployee" Height="23" TextWrapping="Wrap" Text="" FontSize="15"/>
+            <PasswordBox x:Name="PasswordOfEmployee" Height="23"  FontSize="15" />
             <TextBlock TextWrapping="Wrap" Text="Confirm Password:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
-            <TextBox x:Name="ConfirmPasswordOfEmployee" Height="23" TextWrapping="Wrap" Text="" FontSize="15"/>
+            <PasswordBox x:Name="ConfirmPasswordOfEmployee" Height="23" FontSize="15"/>
             <TextBlock TextWrapping="Wrap" Text="Email address:" FontSize="18" FontWeight="Bold" Margin="0,5,0,5" TextAlignment="Center"/>
             <TextBox x:Name="EmailOfEmployee" Height="23" TextWrapping="Wrap" Text="" FontSize="15"/>
             <Button x:Name="Save_Button" Content="Save" Margin="0,35,0,0" Height="36" FontSize="18" FontWeight="Bold" Click="Save_Button_Click"/>

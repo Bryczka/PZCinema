@@ -4,12 +4,11 @@ using System.IO;
 namespace ClientCinemaApp
 {
 
-    class IpConfig
+    public class IpConfig
     {
         readonly string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "IpConfig.txt");
         readonly string emptyIp = "000.000.0.000";
         string readValue;
-
         public string GetIpAsync()
         {
             try
@@ -17,7 +16,6 @@ namespace ClientCinemaApp
                 if (File.Exists(fileName))
                 {
                     readValue = File.ReadAllText(fileName);
-
                     if (readValue.Equals(""))
                     {
                         return emptyIp;

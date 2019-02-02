@@ -318,7 +318,7 @@ namespace AdminCinemaApp
                 {
                     unitOfWork.Employee.Remove(SelectedEmployeeObj);
                     unitOfWork.Complete();
-                    MessageBox.Show("Deleted employee: " + SelectedEmployee.Name + SelectedEmployee.Surname, "Deleted", MessageBoxButton.OK);
+                    MessageBox.Show("Deleted employee: " + SelectedEmployee.Name +" "+ SelectedEmployee.Surname, "Deleted", MessageBoxButton.OK);
                     Loading_Data();
                 }
                 else if (result == MessageBoxResult.No)
