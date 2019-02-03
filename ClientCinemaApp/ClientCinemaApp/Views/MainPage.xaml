@@ -9,14 +9,15 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="filmsListView" BackgroundColor="Gray" RowHeight="400" Style="MyTheme">
+            <ListView x:Name="filmsListView" BackgroundColor="Gray" Style="MyTheme" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell  Tapped="FilmItemText_Tapped">
+                        <ViewCell Tapped="FilmItemText_Tapped">
                             <StackLayout Margin="10,10,10,10" BackgroundColor="DimGray">
                                 <Label x:Name="FilmItemText" TextColor="White" Text="{Binding Title}" FontSize="Medium" FontAttributes="Bold" Margin="5,5,5,25" HorizontalTextAlignment="Center"/>
+                                <Image x:Name="Poster" Source="{Binding Poster}" HeightRequest="350" WidthRequest="350" MinimumHeightRequest="350" MinimumWidthRequest="350" Margin="5,5,5,10"></Image>
                                 <Label x:Name="FilmDescription" TextColor="White" Text="{Binding Description}" FontSize="Default" FontAttributes="Italic" HorizontalTextAlignment="Center"/>
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="10,10,10,30"> 
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="10,10,10,30">
                                     <Label x:Name="FilmAge" TextColor="White" Text="Age limit: " FontSize="Default" HorizontalTextAlignment="Center"/>
                                     <Label x:Name="FilmAgeLimit" TextColor="White" Text="{Binding Age_Limit}" FontSize="Default" HorizontalTextAlignment="Center"/>
                                     <Label x:Name="FilmDuration" TextColor="White" Text="Duration: " FontSize="Default" HorizontalTextAlignment="Center"/>

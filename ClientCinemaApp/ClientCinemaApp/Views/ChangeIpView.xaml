@@ -9,4 +9,4 @@
             <Button x:Name="SaveIp" Text="Click to save ip" Clicked="SaveIp_Clicked" BackgroundColor="WhiteSmoke" FontSize="20"></Button>
         </StackLayout>
     </ContentPage.Content>
-</ContentPage>s
+</ContentPage>

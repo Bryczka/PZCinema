@@ -14,15 +14,20 @@ namespace ClientCinemaApp
         public MainPage()
         {
             InitializeComponent();
-            DependencyService.Get<IMessage>().LongAlert("Connecting...");         
+            DependencyService.Get<IMessage>().LongAlert("Connecting...");            
         }
 
         private async void LoadFilms()
         {
+            
             List<Film> ListFilms = new List<Film>();
             ListFilms = await  ApiConnector.GetFilmListService();
             if (ListFilms != null)
-            {
+            {            
+                foreach (Film film in ListFilms)
+                {
+                    film.Poster = ImageSource.FromStream(() => new MemoryStream(film.FilmPoster));
+                }
                 filmsListView.ItemsSource = ListFilms;
             }
             else

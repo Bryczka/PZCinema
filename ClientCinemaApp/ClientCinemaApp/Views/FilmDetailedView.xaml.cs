@@ -1,9 +1,7 @@
 ﻿using ClientCinemaApp.Services;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -40,7 +38,7 @@ namespace ClientCinemaApp
                         Margin = new Thickness(10, 10, 10, 10),
                         WidthRequest = 30,
                         HeightRequest = 80,
-                        Text = "Name of room: " + filmshow.RoomName + Environment.NewLine +"Time: " + filmshow.Time,
+                        Text = "Name of room: " + filmshow.RoomName + Environment.NewLine + "Time: " + filmshow.Time,
                         FontSize = 15,
                         TabIndex = filmshow.Id,
                         BackgroundColor = Color.WhiteSmoke,

@@ -1058,11 +1058,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Michał\\source\\repos\\CinemaDatabase\\ClientCinemaApp\\ClientCinemaApp.iOS\\ClientCinemaApp.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Michał\\source\\repos\\CInemaDatabase\\ClientCinemaApp\\ClientCinemaApp.iOS\\ClientCinemaApp.iOS.csproj",
       "projectName": "ClientCinemaApp.iOS",
-      "projectPath": "C:\\Users\\Michał\\source\\repos\\CinemaDatabase\\ClientCinemaApp\\ClientCinemaApp.iOS\\ClientCinemaApp.iOS.csproj",
+      "projectPath": "C:\\Users\\Michał\\source\\repos\\CInemaDatabase\\ClientCinemaApp\\ClientCinemaApp.iOS\\ClientCinemaApp.iOS.csproj",
       "packagesPath": "C:\\Users\\Michał\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Michał\\source\\repos\\CinemaDatabase\\ClientCinemaApp\\ClientCinemaApp.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Michał\\source\\repos\\CInemaDatabase\\ClientCinemaApp\\ClientCinemaApp.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -1081,8 +1081,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Michał\\source\\repos\\CinemaDatabase\\ClientCinemaApp\\ClientCinemaApp\\ClientCinemaApp.csproj": {
-              "projectPath": "C:\\Users\\Michał\\source\\repos\\CinemaDatabase\\ClientCinemaApp\\ClientCinemaApp\\ClientCinemaApp.csproj"
+            "C:\\Users\\Michał\\source\\repos\\CInemaDatabase\\ClientCinemaApp\\ClientCinemaApp\\ClientCinemaApp.csproj": {
+              "projectPath": "C:\\Users\\Michał\\source\\repos\\CInemaDatabase\\ClientCinemaApp\\ClientCinemaApp\\ClientCinemaApp.csproj"
             }
           }
         }
